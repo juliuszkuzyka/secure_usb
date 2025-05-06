@@ -1,10 +1,15 @@
-# main.py
-
+import tkinter as tk
 from logger import setup_logger
 from database import create_db
-from usb_monitor import monitor_usb
+from gui import USBMonitorGUI
 
 if __name__ == "__main__":
-    setup_logger()
-    create_db()
-    monitor_usb()
+    try:
+        setup_logger()
+        create_db()
+        root = tk.Tk()
+        app = USBMonitorGUI(root)
+        root.mainloop()
+    except Exception as e:
+        print(f"Application error: {e}")
+        raise

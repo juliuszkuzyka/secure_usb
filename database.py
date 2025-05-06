@@ -1,30 +1,90 @@
 # database.py
 
 import sqlite3
-from config import DB_FILE
+import logging
+import os
+
+DB_NAME = "devices.db"
 
 def create_db():
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS devices (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            vendor_id TEXT,
-            product_id TEXT,
-            device_name TEXT,
-            authorized INTEGER,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )
-    ''')
-    conn.commit()
-    conn.close()
+    """Create the SQLite database and initialize tables."""
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        
+        c.execute('''
+            CREATE TABLE IF NOT EXISTS whitelist (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                vendor_id TEXT NOT NULL,
+                product_id TEXT NOT NULL,
+                UNIQUE(vendor_id, product_id)
+            )
+        ''')
 
-def add_device(vendor_id, product_id, device_name, authorized):
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute('''
-        INSERT INTO devices (vendor_id, product_id, device_name, authorized)
-        VALUES (?, ?, ?, ?)
-    ''', (vendor_id, product_id, device_name, authorized))
-    conn.commit()
-    conn.close()
+        c.execute('''
+            CREATE TABLE IF NOT EXISTS logs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp TEXT NOT NULL,
+                vendor_id TEXT,
+                product_id TEXT,
+                action TEXT NOT NULL
+            )
+        ''')
+
+        conn.commit()
+        logging.info("Database initialized successfully")
+    except sqlite3.Error as e:
+        logging.error(f"Database creation error: {e}")
+        raise
+    finally:
+        if conn:
+            conn.close()
+
+def is_device_whitelisted(vendor_id, product_id):
+    """Check if a device is in the whitelist."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        c.execute("SELECT 1 FROM whitelist WHERE vendor_id=? AND product_id=?", (vendor_id, product_id))
+        result = c.fetchone()
+        return result is not None
+    except sqlite3.Error as e:
+        logging.error(f"Error checking whitelist: {e}")
+        return False
+    finally:
+        if conn:
+            conn.close()
+
+def add_to_whitelist(vendor_id, product_id):
+    """Add a device to the whitelist."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        c.execute("INSERT INTO whitelist (vendor_id, product_id) VALUES (?, ?)", (vendor_id, product_id))
+        conn.commit()
+        logging.info(f"Added to whitelist: {vendor_id}:{product_id}")
+    except sqlite3.IntegrityError:
+        logging.info(f"Device already in whitelist: {vendor_id}:{product_id}")
+    except sqlite3.Error as e:
+        logging.error(f"Error adding to whitelist: {e}")
+    finally:
+        if conn:
+            conn.close()
+
+def log_event(timestamp, vendor_id, product_id, action):
+    """Log a USB event to the database."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        c.execute("INSERT INTO logs (timestamp, vendor_id, product_id, action) VALUES (?, ?, ?, ?)",
+                  (timestamp, vendor_id, product_id, action))
+        conn.commit()
+        logging.info(f"Logged event: {action} for {vendor_id}:{product_id}")
+    except sqlite3.Error as e:
+        logging.error(f"Error logging event: {e}")
+    finally:
+        if conn:
+            conn.close()

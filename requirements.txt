@@ -1,3 +1,5 @@
 pywin32
 psutil
 tk
+pyudev
+pyusb
