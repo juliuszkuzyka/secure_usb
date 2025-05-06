@@ -1,50 +1,23 @@
-# Ignorowanie folderu środowiska wirtualnego
-.venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
 
-# Ignorowanie plików baz danych SQLite (np. plik secure_usb.db)
-*.sqlite3
+# SQLite
 *.db
 
-# Ignorowanie plików logów (np. events.log)
+# Logs
+logs/
 *.log
-events.log
 
-# Ignorowanie plików tymczasowych generowanych przez edytory (np. VS Code, PyCharm)
+# Virtual environments
+.venv/
+env/
+venv/
+
+# IDE
 .vscode/
 .idea/
-*.swp
 
-# Ignorowanie plików systemowych (MacOS)
+# System files
 .DS_Store
-
-# Ignorowanie plików systemowych (Windows)
-Thumbs.db
-ehthumbs.db
-
-# Ignorowanie plików generowanych przez Python (np. bytecode)
-__pycache__/
-*.pyc
-*.pyo
-
-# Ignorowanie folderów związanych z dystrybucją (np. build, dist)
-build/
-dist/
-*.egg
-*.whl
-
-# Ignorowanie plików związanych z testami, np. pytest
-*.cover
-.coverage
-*.hypothesis/
-.tox/
-.nox/
-*.nox/
-*.coverage*
-*.hypothesis/
-
-# Ignorowanie plików Jupyter Notebook
-.ipynb_checkpoints/
-
-# Dodatkowe, tymczasowe pliki (jeśli są tworzone)
-# (W razie potrzeby dodaj tutaj inne pliki, które nie chcesz dodawać do repozytorium)
-__pycache__

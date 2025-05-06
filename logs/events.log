@@ -98,3 +98,215 @@
 2025-05-06 16:07:25,420 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
 2025-05-06 16:07:40,693 - INFO - Device already in whitelist: 0x8086:0x8511
 2025-05-06 16:07:40,693 - INFO - GUI: Added to whitelist: 0x8086:0x8511
+2025-05-06 16:20:09,913 - INFO - Logger initialized successfully
+2025-05-06 16:20:09,959 - INFO - Database initialized successfully
+2025-05-06 16:20:10,665 - INFO - Monitoring USB devices...
+2025-05-06 16:20:12,819 - WARNING - Unauthorized device: 0x05ac:0xc539
+2025-05-06 16:20:12,826 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:20:12,827 - WARNING - Unauthorized device: 0x8086:0x8511
+2025-05-06 16:20:12,829 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:20:22,926 - INFO - Added to whitelist: 0x05ac:0xc539
+2025-05-06 16:20:28,977 - INFO - Added to whitelist: 0x8086:0x8511
+2025-05-06 16:20:38,528 - INFO - Logger initialized successfully
+2025-05-06 16:20:38,529 - INFO - Database initialized successfully
+2025-05-06 16:20:38,806 - INFO - Monitoring USB devices...
+2025-05-06 16:20:40,972 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:20:40,975 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:23:05,447 - INFO - Logger initialized successfully
+2025-05-06 16:23:05,469 - INFO - Database initialized successfully
+2025-05-06 16:23:05,857 - INFO - Monitoring USB devices...
+2025-05-06 16:23:08,024 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:23:08,027 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:28:09,375 - INFO - Logger initialized successfully
+2025-05-06 16:28:09,538 - INFO - Database initialized successfully
+2025-05-06 16:28:10,048 - INFO - Monitoring USB devices...
+2025-05-06 16:28:10,421 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:10,422 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:12,217 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:28:12,219 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:28:12,632 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:12,633 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:14,791 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:14,791 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:16,934 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:16,935 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:19,088 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:19,088 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:21,241 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:21,241 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:23,395 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:23,396 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:25,617 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:25,618 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:27,759 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:27,760 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:29,906 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:29,907 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:31,774 - WARNING - Unauthorized device: 0x05ac:0x3324
+2025-05-06 16:28:31,777 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-06 16:28:31,778 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-06 16:28:31,779 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-06 16:28:31,781 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539
+2025-05-06 16:28:32,117 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:32,117 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:34,348 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:34,348 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:36,583 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:36,583 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:37,192 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:37,193 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:37,959 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:37,960 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:38,743 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:38,744 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:39,348 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:39,349 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:40,175 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:40,176 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:40,969 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:40,970 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:41,502 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:41,502 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:42,335 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:42,336 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:43,127 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:43,127 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:43,735 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:43,735 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:44,556 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:44,556 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:45,288 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:45,288 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:45,964 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:45,965 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:46,714 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:46,714 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:47,455 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:47,455 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:28:48,237 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:28:48,238 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:36,858 - INFO - Logger initialized successfully
+2025-05-06 16:29:36,871 - INFO - Database initialized successfully
+2025-05-06 16:29:37,142 - INFO - Monitoring USB devices...
+2025-05-06 16:29:37,459 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:37,459 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:39,369 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:29:39,370 - WARNING - Unauthorized device: 0x05ac:0x3324
+2025-05-06 16:29:39,371 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-06 16:29:39,372 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-06 16:29:39,373 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-06 16:29:39,624 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:39,625 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:41,782 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:41,782 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:43,953 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:43,953 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:46,185 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:46,185 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:48,352 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:48,353 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:50,594 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:50,594 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:52,835 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:52,836 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:54,996 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:54,996 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:57,188 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:57,189 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:29:59,352 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:29:59,352 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:01,520 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:01,520 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:03,714 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:03,714 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:05,946 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:05,947 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:08,122 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:08,123 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:10,397 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:10,398 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:12,572 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:12,573 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:14,815 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:14,816 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:16,989 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:16,989 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:19,161 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:19,162 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:21,320 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:21,320 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:23,490 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:23,491 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:25,645 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:25,646 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:27,959 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:27,960 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:30,197 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:30,197 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:32,425 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:32,425 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:33,746 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:33,747 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:34,577 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:34,578 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:35,900 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:35,901 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:36,806 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:36,806 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:38,840 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:38,841 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:39,057 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:39,057 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:41,018 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:41,018 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:41,288 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:41,289 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:43,173 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:43,174 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:43,459 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:43,460 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:45,402 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:45,402 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:45,687 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:45,688 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:47,559 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:47,560 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:47,910 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:47,911 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:49,788 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:49,789 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:50,068 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:50,068 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:52,035 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:52,035 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:52,040 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:30:52,042 - INFO - Logged event: DISCONNECTED for 0x48d2:0xc539
+2025-05-06 16:30:52,043 - INFO - Logged event: DISCONNECTED for 0x05ac:0x3324
+2025-05-06 16:30:52,282 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:52,283 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:54,253 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:54,253 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:54,434 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:54,434 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:55,493 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:55,494 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:56,475 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:56,476 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:56,627 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:56,627 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:57,724 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:57,728 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:58,626 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:58,626 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:30:58,766 - ERROR - Error reading whitelist: no such table: whitelist
+2025-05-06 16:30:58,766 - ERROR - GUI update error: name 'DB_NAME' is not defined
+2025-05-06 16:31:29,407 - INFO - Logger initialized successfully
+2025-05-06 16:31:29,436 - INFO - Database initialized successfully
+2025-05-06 16:31:29,886 - INFO - Monitoring USB devices...
+2025-05-06 16:31:32,106 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-06 16:31:32,108 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-06 16:31:58,238 - WARNING - Unauthorized device: 0x05ac:0x3324
+2025-05-06 16:31:58,242 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-06 16:31:58,242 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-06 16:31:58,244 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-06 16:31:58,247 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539

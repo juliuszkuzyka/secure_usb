@@ -1,17 +1,15 @@
-# database.py
-
 import sqlite3
 import logging
 import os
-
-DB_NAME = "devices.db"
+from config import DB_FILE
 
 def create_db():
     """Create the SQLite database and initialize tables."""
     try:
-        conn = sqlite3.connect(DB_NAME)
+        os.makedirs(os.path.dirname(DB_FILE), exist_ok=True)
+        conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
-        
+
         c.execute('''
             CREATE TABLE IF NOT EXISTS whitelist (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,14 +39,11 @@ def create_db():
             conn.close()
 
 def is_device_whitelisted(vendor_id, product_id):
-    """Check if a device is in the whitelist."""
-    conn = None
     try:
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
         c.execute("SELECT 1 FROM whitelist WHERE vendor_id=? AND product_id=?", (vendor_id, product_id))
-        result = c.fetchone()
-        return result is not None
+        return c.fetchone() is not None
     except sqlite3.Error as e:
         logging.error(f"Error checking whitelist: {e}")
         return False
@@ -57,10 +52,8 @@ def is_device_whitelisted(vendor_id, product_id):
             conn.close()
 
 def add_to_whitelist(vendor_id, product_id):
-    """Add a device to the whitelist."""
-    conn = None
     try:
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
         c.execute("INSERT INTO whitelist (vendor_id, product_id) VALUES (?, ?)", (vendor_id, product_id))
         conn.commit()
@@ -74,10 +67,8 @@ def add_to_whitelist(vendor_id, product_id):
             conn.close()
 
 def log_event(timestamp, vendor_id, product_id, action):
-    """Log a USB event to the database."""
-    conn = None
     try:
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
         c.execute("INSERT INTO logs (timestamp, vendor_id, product_id, action) VALUES (?, ?, ?, ?)",
                   (timestamp, vendor_id, product_id, action))
@@ -85,6 +76,21 @@ def log_event(timestamp, vendor_id, product_id, action):
         logging.info(f"Logged event: {action} for {vendor_id}:{product_id}")
     except sqlite3.Error as e:
         logging.error(f"Error logging event: {e}")
+    finally:
+        if conn:
+            conn.close()
+
+def get_recent_logs(limit=20):
+    """Fetch recent USB log events from the database."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        c.execute("SELECT timestamp, vendor_id, product_id, action FROM logs ORDER BY id DESC LIMIT ?", (limit,))
+        return c.fetchall()
+    except sqlite3.Error as e:
+        logging.error(f"Error fetching recent logs: {e}")
+        return []
     finally:
         if conn:
             conn.close()
