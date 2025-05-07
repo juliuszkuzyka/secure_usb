@@ -310,3 +310,197 @@
 2025-05-06 16:31:58,242 - WARNING - Unauthorized device: 0x48d2:0xc539
 2025-05-06 16:31:58,244 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
 2025-05-06 16:31:58,247 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539
+2025-05-07 12:47:34,815 - INFO - Logger initialized successfully
+2025-05-07 12:47:34,871 - INFO - Database initialized successfully
+2025-05-07 12:47:35,069 - INFO - Monitoring USB devices...
+2025-05-07 12:47:37,239 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 12:47:37,403 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 12:47:37,404 - WARNING - Unauthorized device: 0x05ac:0x0267
+2025-05-07 12:47:37,602 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 12:47:51,377 - INFO - Logger initialized successfully
+2025-05-07 12:47:51,743 - INFO - Database initialized successfully
+2025-05-07 12:47:52,054 - INFO - Monitoring USB devices...
+2025-05-07 12:47:54,343 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 12:47:54,344 - WARNING - Unauthorized device: 0x05ac:0x0267
+2025-05-07 12:47:54,521 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 12:47:54,627 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 12:56:00,751 - INFO - Logger initialized successfully
+2025-05-07 12:56:00,781 - INFO - Database initialized successfully
+2025-05-07 12:56:01,031 - INFO - Monitoring USB devices...
+2025-05-07 12:56:03,254 - WARNING - Unauthorized device: 0x05ac:0x0267
+2025-05-07 12:56:03,261 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 12:56:03,264 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 12:56:03,266 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:00:08,308 - INFO - Logger initialized successfully
+2025-05-07 13:00:08,309 - INFO - Database initialized successfully
+2025-05-07 13:00:08,686 - INFO - Monitoring USB devices...
+2025-05-07 13:00:11,064 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:00:11,065 - WARNING - Unauthorized device: 0x05ac:0x0267
+2025-05-07 13:00:11,066 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:00:11,068 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:00:28,253 - INFO - Added to whitelist: 0x05ac:0x0267
+2025-05-07 13:04:24,620 - INFO - Logger initialized successfully
+2025-05-07 13:04:24,621 - INFO - Database initialized successfully
+2025-05-07 13:04:24,983 - INFO - Monitoring USB devices...
+2025-05-07 13:04:27,148 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:04:27,151 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:04:27,154 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:04:35,988 - WARNING - Unauthorized device: 0x05ac:0x3324
+2025-05-07 13:04:35,990 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 13:04:35,990 - WARNING - Unauthorized device: 0x48d2:0x0267
+2025-05-07 13:04:35,991 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0x0267
+2025-05-07 13:04:35,993 - INFO - Logged event: DISCONNECTED for 0x05ac:0x0267
+2025-05-07 13:05:02,273 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:05:02,275 - INFO - Logged event: DISCONNECTED for 0x05ac:0x3324
+2025-05-07 13:05:02,277 - INFO - Logged event: DISCONNECTED for 0x48d2:0x0267
+2025-05-07 13:08:32,967 - INFO - Logger initialized successfully
+2025-05-07 13:08:32,968 - INFO - Database initialized successfully
+2025-05-07 13:08:33,260 - INFO - Monitoring USB devices...
+2025-05-07 13:08:46,224 - INFO - Logger initialized successfully
+2025-05-07 13:08:46,225 - INFO - Database initialized successfully
+2025-05-07 13:08:46,511 - INFO - Monitoring USB devices...
+2025-05-07 13:08:48,673 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:08:48,675 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:08:48,677 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:09:30,196 - WARNING - Unauthorized device: 0x8086:0x3324
+2025-05-07 13:09:30,198 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x8086:0x3324
+2025-05-07 13:09:30,198 - WARNING - Unauthorized device: 0x48d2:0x8511
+2025-05-07 13:09:30,200 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0x8511
+2025-05-07 13:09:30,201 - INFO - Logged event: DISCONNECTED for 0x8086:0x8511
+2025-05-07 13:09:45,499 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:09:45,501 - INFO - Logged event: DISCONNECTED for 0x8086:0x3324
+2025-05-07 13:09:45,502 - INFO - Logged event: DISCONNECTED for 0x48d2:0x8511
+2025-05-07 13:12:57,898 - INFO - Logger initialized successfully
+2025-05-07 13:12:57,938 - INFO - Database initialized successfully
+2025-05-07 13:12:58,456 - INFO - Monitoring USB devices...
+2025-05-07 13:13:00,687 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:13:00,689 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:13:00,691 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:19:27,623 - INFO - Logger initialized successfully
+2025-05-07 13:19:27,646 - INFO - Database initialized successfully
+2025-05-07 13:19:28,136 - INFO - Monitoring USB devices...
+2025-05-07 13:19:30,369 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:19:30,371 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:19:30,373 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:19:39,482 - INFO - Logger initialized successfully
+2025-05-07 13:19:39,483 - INFO - Database initialized successfully
+2025-05-07 13:19:39,767 - INFO - Monitoring USB devices...
+2025-05-07 13:19:42,007 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:19:42,008 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:19:42,010 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:48:56,416 - INFO - Logger initialized successfully
+2025-05-07 13:48:56,428 - INFO - Database initialized successfully
+2025-05-07 13:49:08,511 - INFO - Logger initialized successfully
+2025-05-07 13:49:08,513 - INFO - Database initialized successfully
+2025-05-07 13:49:45,049 - INFO - Logger initialized successfully
+2025-05-07 13:49:45,074 - INFO - Database initialized successfully
+2025-05-07 13:50:17,317 - INFO - Logger initialized successfully
+2025-05-07 13:50:17,337 - INFO - Database initialized successfully
+2025-05-07 13:50:17,944 - INFO - Monitoring USB devices...
+2025-05-07 13:50:20,118 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:50:20,119 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:50:20,121 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:51:55,914 - INFO - Logger initialized successfully
+2025-05-07 13:51:55,928 - INFO - Database initialized successfully
+2025-05-07 13:51:56,452 - INFO - Monitoring USB devices...
+2025-05-07 13:51:58,622 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:51:58,623 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:51:58,625 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:52:12,452 - INFO - Logger initialized successfully
+2025-05-07 13:52:12,454 - INFO - Database initialized successfully
+2025-05-07 13:52:12,811 - INFO - Monitoring USB devices...
+2025-05-07 13:53:43,958 - INFO - Logger initialized successfully
+2025-05-07 13:53:43,976 - INFO - Database initialized successfully
+2025-05-07 13:53:44,427 - INFO - Monitoring USB devices...
+2025-05-07 13:53:46,704 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:53:46,706 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:53:46,707 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:55:06,497 - INFO - Logger initialized successfully
+2025-05-07 13:55:06,516 - INFO - Database initialized successfully
+2025-05-07 13:55:07,095 - INFO - Monitoring USB devices...
+2025-05-07 13:55:09,320 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:55:09,323 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 13:55:09,324 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:56:40,160 - INFO - Logger initialized successfully
+2025-05-07 13:56:40,189 - INFO - Database initialized successfully
+2025-05-07 13:59:22,876 - INFO - Logger initialized successfully
+2025-05-07 13:59:22,897 - INFO - Database initialized successfully
+2025-05-07 13:59:23,410 - INFO - Monitoring USB devices...
+2025-05-07 13:59:25,669 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 13:59:25,671 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 13:59:25,673 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:00:18,140 - INFO - Logger initialized successfully
+2025-05-07 14:00:18,142 - INFO - Database initialized successfully
+2025-05-07 14:00:18,446 - INFO - Monitoring USB devices...
+2025-05-07 14:00:20,625 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 14:00:20,628 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:00:20,631 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 14:02:29,047 - INFO - Logger initialized successfully
+2025-05-07 14:02:29,081 - INFO - Database initialized successfully
+2025-05-07 14:02:29,753 - INFO - Monitoring USB devices...
+2025-05-07 14:02:29,970 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:02:31,909 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:02:31,911 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 14:02:31,913 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 14:02:32,201 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:02:34,355 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:08:29,054 - INFO - Logger initialized successfully
+2025-05-07 14:08:29,073 - INFO - Database initialized successfully
+2025-05-07 14:08:29,527 - INFO - Monitoring USB devices...
+2025-05-07 14:08:29,802 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:08:31,714 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 14:08:31,716 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 14:08:31,718 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:34:03,127 - INFO - Logger initialized successfully
+2025-05-07 14:34:03,151 - INFO - Database initialized successfully
+2025-05-07 14:34:03,716 - INFO - Monitoring USB devices...
+2025-05-07 14:34:04,287 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:05,980 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 14:34:05,987 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 14:34:05,990 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:34:06,441 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:08,659 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:10,880 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:13,212 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:15,434 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:17,596 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:19,753 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:21,980 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:24,137 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:26,369 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:28,597 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:30,806 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:33,032 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:35,251 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:37,402 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:39,616 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:41,839 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:43,991 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:46,223 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:48,448 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:50,673 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:52,831 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:54,994 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:57,148 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:34:59,309 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:35:01,534 - ERROR - GUI update error: '_tkinter.tkapp' object has no attribute 'log_text'
+2025-05-07 14:37:20,503 - INFO - Logger initialized successfully
+2025-05-07 14:37:20,505 - INFO - Database initialized successfully
+2025-05-07 14:37:20,982 - INFO - Monitoring USB devices...
+2025-05-07 14:37:23,168 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 14:37:23,170 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x0267
+2025-05-07 14:37:23,171 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:37:47,308 - WARNING - Unauthorized device: 0x48d2:0x0267
+2025-05-07 14:37:47,310 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0x0267
+2025-05-07 14:37:47,311 - WARNING - Unauthorized device: 0x05ac:0x3324
+2025-05-07 14:37:47,313 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 14:37:47,314 - INFO - Logged event: DISCONNECTED for 0x05ac:0x0267
+2025-05-07 14:39:45,139 - INFO - Logger initialized successfully
+2025-05-07 14:39:45,140 - INFO - Database initialized successfully
+2025-05-07 14:39:45,649 - INFO - Monitoring USB devices...
+2025-05-07 14:39:47,678 - INFO - Added to whitelist: 0x05ac:0x3324
+2025-05-07 14:39:47,880 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 14:39:47,881 - WARNING - Unauthorized device: 0x48d2:0x0267
+2025-05-07 14:39:47,883 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0x0267
+2025-05-07 14:39:47,884 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 14:39:47,886 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511

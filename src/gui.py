@@ -1,111 +1,116 @@
-import tkinter as tk
-from tkinter import ttk, messagebox
-from threading import Thread
+import customtkinter as ctk
 import logging
 import os
+import sqlite3
+from threading import Thread
+from tkinter import messagebox
 
 from .usb_monitor import get_connected_devices, monitor_usb
 from .database import is_device_whitelisted, add_to_whitelist
 from config import LOG_FILE, DB_FILE
 
-class USBMonitorGUI:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("USB Security Monitor")
-        self.root.geometry("900x600")
-        self.root.configure(bg="#2E2E2E")
-        self.devices = set()
+class USBMonitorApp(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        self.title("USB Security Monitor")
+        self.geometry("1000x700")
+        self.configure(bg="#1E1E1E")
+        ctk.set_appearance_mode("dark")
+        ctk.set_default_color_theme("blue")
 
-        self.setup_widgets()
+        self.devices = set()
+        self.setup_ui()
         Thread(target=monitor_usb, daemon=True).start()
         self.update_gui()
 
-    def setup_widgets(self):
-        style = ttk.Style()
-        style.theme_use('clam')
-        style.configure("TLabel", foreground="white", background="#2E2E2E")
-        style.configure("TButton", background="#4A90E2", foreground="white")
+    def setup_ui(self):
+        self.header_label = ctk.CTkLabel(self, text="USB Security Monitor", font=("Segoe UI", 20, "bold"))
+        self.header_label.pack(pady=20)
 
-        self.device_frame = ttk.LabelFrame(self.root, text="Connected USB Devices")
+        self.device_frame = ctk.CTkFrame(self)
         self.device_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        self.device_list = tk.Listbox(self.device_frame, height=10, bg="#3C3F41", fg="white")
-        self.device_list.pack(fill="both", padx=5, pady=5)
-        self.device_list.bind('<<ListboxSelect>>', self.on_device_select)
+        self.device_label = ctk.CTkLabel(self.device_frame, text="Connected USB Devices", font=("Segoe UI", 14, "bold"))
+        self.device_label.pack(pady=5)
 
-        self.device_buttons = ttk.Frame(self.device_frame)
-        self.device_buttons.pack(pady=5)
-        ttk.Button(self.device_buttons, text="Add to Whitelist", command=self.add_to_whitelist).pack(side=tk.LEFT, padx=5)
-        ttk.Button(self.device_buttons, text="Refresh", command=self.update_gui).pack(side=tk.LEFT, padx=5)
+        self.device_listbox = ctk.CTkTextbox(self.device_frame, height=150, width=700, font=("Segoe UI", 12), corner_radius=10)
+        self.device_listbox.pack(pady=5)
 
-        self.whitelist_frame = ttk.LabelFrame(self.root, text="Whitelisted Devices")
+        self.whitelist_frame = ctk.CTkFrame(self)
         self.whitelist_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        self.whitelist_list = tk.Listbox(self.whitelist_frame, height=5, bg="#3C3F41", fg="white")
-        self.whitelist_list.pack(fill="both", padx=5, pady=5)
+        self.whitelist_label = ctk.CTkLabel(self.whitelist_frame, text="Whitelisted Devices", font=("Segoe UI", 14, "bold"))
+        self.whitelist_label.pack(pady=5)
 
-        self.log_frame = ttk.LabelFrame(self.root, text="Recent Events")
+        self.whitelist_listbox = ctk.CTkTextbox(self.whitelist_frame, height=100, width=700, font=("Segoe UI", 12), corner_radius=10)
+        self.whitelist_listbox.pack(pady=5)
+
+        self.buttons_frame = ctk.CTkFrame(self)
+        self.buttons_frame.pack(pady=10)
+
+        self.add_button = ctk.CTkButton(self.buttons_frame, text="Add to Whitelist", command=self.add_to_whitelist, fg_color="#4A90E2")
+        self.add_button.pack(side="left", padx=5)
+
+        self.refresh_button = ctk.CTkButton(self.buttons_frame, text="Refresh", command=self.update_gui, fg_color="#357ABD")
+        self.refresh_button.pack(side="left", padx=5)
+
+        self.log_frame = ctk.CTkFrame(self)
         self.log_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        self.log_text = tk.Text(self.log_frame, height=5, bg="#3C3F41", fg="white", state='disabled')
-        self.log_text.pack(fill="both", padx=5, pady=5)
+        self.log_label = ctk.CTkLabel(self.log_frame, text="Recent Events", font=("Segoe UI", 14, "bold"))
+        self.log_label.pack(pady=5)
 
-        self.status_var = tk.StringVar(value="Monitoring USB devices...")
-        self.status_label = ttk.Label(self.root, textvariable=self.status_var)
-        self.status_label.pack(side=tk.BOTTOM, fill=tk.X, padx=10, pady=5)
+        self.log_text = ctk.CTkTextbox(self.log_frame, height=150, width=700, font=("Consolas", 12), corner_radius=10)
+        self.log_text.pack(pady=5)
 
-    def on_device_select(self, event):
-        try:
-            selected = self.device_list.get(tk.ACTIVE)
-            if selected:
-                self.status_var.set(f"Selected: {selected}")
-        except Exception as e:
-            logging.error(f"Device select error: {e}")
+        self.status_label = ctk.CTkLabel(self, text="Monitoring USB devices...", font=("Segoe UI", 12))
+        self.status_label.pack(side="bottom", pady=5)
 
     def update_gui(self):
         try:
+            self.device_listbox.delete("0.0", "end")
+            self.whitelist_listbox.delete("0.0", "end")
+
             current_devices = get_connected_devices()
             if current_devices != self.devices:
                 self.devices = current_devices
-                self.device_list.delete(0, tk.END)
-                for vendor_id, product_id in self.devices:
+                for vendor_id, product_id in sorted(self.devices):
                     status = "Authorized" if is_device_whitelisted(vendor_id, product_id) else "Unauthorized"
-                    self.device_list.insert(tk.END, f"{vendor_id}:{product_id} - {status}")
+                    self.device_listbox.insert("end", f"{vendor_id}:{product_id} - {status}\n")
 
-            self.whitelist_list.delete(0, tk.END)
-            import sqlite3
             conn = sqlite3.connect(DB_FILE)
             c = conn.cursor()
             c.execute("SELECT vendor_id, product_id FROM whitelist")
             for vid, pid in c.fetchall():
-                self.whitelist_list.insert(tk.END, f"{vid}:{pid}")
+                self.whitelist_listbox.insert("end", f"{vid}:{pid}\n")
             conn.close()
 
-            self.log_text.configure(state='normal')
-            self.log_text.delete(1.0, tk.END)
+            self.log_text.delete("0.0", "end")
             if os.path.exists(LOG_FILE):
                 with open(LOG_FILE, "r") as f:
-                    lines = f.readlines()[-10:]
-                    for line in lines:
-                        self.log_text.insert(tk.END, line)
-            self.log_text.configure(state='disabled')
+                    self.log_text.insert("end", f.read())
+                self.log_text.see("end")
 
         except Exception as e:
             logging.error(f"GUI update error: {e}")
-            self.status_var.set(f"Error: {e}")
-        self.root.after(2000, self.update_gui)
+            self.status_label.configure(text=f"Error: {e}")
+        self.after(2000, self.update_gui)
 
     def add_to_whitelist(self):
         try:
-            if not self.device_list.curselection():
+            selected_text = self.device_listbox.get("0.0", "end").strip()
+            if not selected_text:
                 messagebox.showwarning("Warning", "Please select a device to whitelist.")
                 return
-            selected = self.device_list.get(tk.ACTIVE)
-            vendor_id, product_id = selected.split(" - ")[0].split(":")
+
+            vendor_id, product_id = selected_text.split(" - ")[0].split(":")
             add_to_whitelist(vendor_id, product_id)
-            self.status_var.set(f"Added {vendor_id}:{product_id} to whitelist")
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} added.")
             self.update_gui()
         except Exception as e:
             logging.error(f"Add to whitelist error: {e}")
             messagebox.showerror("Error", str(e))
+
+if __name__ == "__main__":
+    app = USBMonitorApp()
+    app.mainloop()

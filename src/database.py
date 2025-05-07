@@ -84,7 +84,7 @@ def get_recent_logs(limit=20):
     """Fetch recent USB log events from the database."""
     conn = None
     try:
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
         c.execute("SELECT timestamp, vendor_id, product_id, action FROM logs ORDER BY id DESC LIMIT ?", (limit,))
         return c.fetchall()

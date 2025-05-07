@@ -3,8 +3,16 @@ import time
 import logging
 from datetime import datetime
 from .database import is_device_whitelisted, log_event
+from threading import Event
 
 system = platform.system()
+alert_callback = None
+stop_event = Event()
+_already_alerted = set()
+
+def set_alert_callback(callback):
+    global alert_callback
+    alert_callback = callback
 
 def get_connected_devices():
     devices = set()
@@ -51,7 +59,7 @@ def monitor_usb():
     logging.info("Monitoring USB devices...")
     previous_devices = set()
 
-    while True:
+    while not stop_event.is_set():
         time.sleep(2)
         try:
             current_devices = get_connected_devices()
@@ -65,13 +73,20 @@ def monitor_usb():
                 else:
                     action = "UNAUTHORIZED_CONNECTED"
                     logging.warning(f"Unauthorized device: {vendor_id}:{product_id}")
+                    if alert_callback and (vendor_id, product_id) not in _already_alerted:
+                        alert_callback(vendor_id, product_id)
+                        _already_alerted.add((vendor_id, product_id))
                 log_event(timestamp, vendor_id, product_id, action)
 
             for vendor_id, product_id in removed:
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 log_event(timestamp, vendor_id, product_id, "DISCONNECTED")
+                _already_alerted.discard((vendor_id, product_id))
 
             previous_devices = current_devices
         except Exception as e:
             logging.error(f"USB monitoring error: {e}")
             time.sleep(5)
+
+def stop_monitoring():
+    stop_event.set()
