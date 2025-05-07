@@ -25,3 +25,295 @@
 2025-05-07 20:14:04,647 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
 2025-05-07 20:14:04,648 - WARNING - Unauthorized device: 0x48d2:0xc539
 2025-05-07 20:14:04,649 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:22:13,697 - INFO - Logger initialized successfully
+2025-05-07 20:22:13,705 - INFO - Database initialized successfully
+2025-05-07 20:22:14,593 - INFO - Monitoring USB devices...
+2025-05-07 20:22:38,643 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:24:08,323 - INFO - Logger initialized successfully
+2025-05-07 20:24:08,358 - INFO - Database initialized successfully
+2025-05-07 20:24:08,997 - INFO - Monitoring USB devices...
+2025-05-07 20:24:24,488 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:26:03,710 - INFO - Logger initialized successfully
+2025-05-07 20:26:03,731 - INFO - Database initialized successfully
+2025-05-07 20:26:04,435 - INFO - Monitoring USB devices...
+2025-05-07 20:26:06,694 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:26:34,040 - INFO - Logger initialized successfully
+2025-05-07 20:26:34,041 - INFO - Database initialized successfully
+2025-05-07 20:26:34,528 - INFO - Monitoring USB devices...
+2025-05-07 20:28:34,028 - INFO - Logger initialized successfully
+2025-05-07 20:28:34,034 - INFO - Database initialized successfully
+2025-05-07 20:28:34,746 - INFO - Monitoring USB devices...
+2025-05-07 20:28:41,017 - INFO - Logger initialized successfully
+2025-05-07 20:28:41,017 - INFO - Database initialized successfully
+2025-05-07 20:28:41,570 - INFO - Monitoring USB devices...
+2025-05-07 20:31:27,873 - INFO - Logger initialized successfully
+2025-05-07 20:31:27,982 - INFO - Database initialized successfully
+2025-05-07 20:31:28,629 - INFO - Monitoring USB devices...
+2025-05-07 20:31:30,799 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:31:30,801 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:31:30,802 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:31:31,829 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:31:39,058 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:31:39,060 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:31:39,060 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:31:40,073 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:31:47,246 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:31:47,248 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:31:47,248 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:31:48,266 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:31:55,511 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:31:55,514 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:31:55,515 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:31:56,541 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:32:03,718 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:32:03,720 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:32:03,720 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:32:04,738 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:32:12,064 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:32:12,071 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:32:12,071 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:32:13,098 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:32:20,326 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:32:20,329 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:32:20,330 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:32:21,349 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:32:28,535 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:32:39,226 - INFO - Device already in whitelist: 0x05ac:0x3324
+2025-05-07 20:32:44,412 - INFO - Device already in whitelist: 0x05ac:0x3324
+2025-05-07 20:32:52,264 - INFO - Device already in whitelist: 0x8086:0x8511
+2025-05-07 20:33:03,766 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:03,782 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:03,783 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:04,797 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:12,082 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:12,127 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:12,128 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:13,148 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:20,398 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:20,400 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:20,401 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:21,430 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:28,669 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:28,670 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:28,671 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:29,687 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:36,859 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:36,861 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:36,862 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:37,885 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:45,057 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:45,059 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:45,059 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:46,090 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:33:53,339 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:33:53,342 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:33:53,343 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:33:54,371 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:01,607 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:01,610 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:01,610 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:02,631 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:09,871 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:09,874 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:09,874 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:10,897 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:18,130 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:18,132 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:18,132 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:19,164 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:26,338 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:26,341 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:26,341 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:27,366 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:34,536 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:34,539 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:34,540 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:35,564 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:42,732 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:42,734 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:42,735 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:43,764 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:50,942 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:50,944 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:50,944 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:34:51,965 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:34:59,137 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:34:59,139 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:34:59,139 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:00,161 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:07,332 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:07,334 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:07,335 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:08,345 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:15,577 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:15,578 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:15,579 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:16,598 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:23,825 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:23,827 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:23,828 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:24,895 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:32,117 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:32,119 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:32,119 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:33,148 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:40,392 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:40,395 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:40,395 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:41,462 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:48,698 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:48,701 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:48,701 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:49,719 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:35:56,959 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:35:56,961 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:35:56,962 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:35:57,992 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:05,236 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:05,238 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:05,238 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:06,261 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:13,506 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:13,508 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:13,508 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:14,547 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:21,784 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:21,786 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:21,786 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:22,808 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:30,056 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:30,058 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:30,058 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:31,069 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:38,311 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:38,317 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:38,317 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:39,344 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:46,518 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:46,520 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:46,523 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:47,533 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:36:54,734 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:36:54,736 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:36:54,737 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:36:55,760 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:03,005 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:37:03,007 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:03,008 - WARNING - Unauthorized device: 0x48d2:0xc539
+2025-05-07 20:37:04,024 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:10,857 - INFO - Logger initialized successfully
+2025-05-07 20:37:10,858 - INFO - Database initialized successfully
+2025-05-07 20:37:11,499 - INFO - Alert callback set
+2025-05-07 20:37:11,499 - INFO - Monitoring USB devices...
+2025-05-07 20:37:13,986 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:13,987 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:14,315 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:15,000 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:15,207 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:15,821 - INFO - Device selected: 0x05ac:0x3324 - Authorized
+2025-05-07 20:37:16,473 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:22,183 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:22,183 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:23,228 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:24,792 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:25,109 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:25,270 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:25,400 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:26,397 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:26,580 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:30,384 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:30,384 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:31,405 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:32,902 - INFO - Removed from whitelist: 0x8086:0x8511
+2025-05-07 20:37:38,578 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:38,578 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:39,587 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:44,969 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:45,412 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:45,667 - INFO - Device selected: 0x05ac:0x3324 - Authorized
+2025-05-07 20:37:46,119 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:46,420 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:37:46,814 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:46,815 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:47,833 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:37:50,079 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:37:55,151 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:37:55,152 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:37:56,165 - ERROR - USB monitoring error: main thread is not in main loop
+2025-05-07 20:38:03,406 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:38:03,407 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:41:51,015 - INFO - Logger initialized successfully
+2025-05-07 20:41:51,083 - INFO - Database initialized successfully
+2025-05-07 20:41:51,780 - INFO - Alert callback set
+2025-05-07 20:41:51,781 - INFO - Monitoring USB devices...
+2025-05-07 20:41:53,949 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:41:53,950 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:41:53,987 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:41:53,988 - WARNING - Unauthorized device detected: 0x8086:0x8511
+2025-05-07 20:41:53,997 - INFO - Alert triggered for 0x48d2:0xc539, bsd_name: None
+2025-05-07 20:41:53,997 - WARNING - No BSD Name available, eject disabled
+2025-05-07 20:41:53,998 - INFO - Alert triggered for 0x8086:0x8511, bsd_name: None
+2025-05-07 20:41:53,998 - WARNING - No BSD Name available, eject disabled
+2025-05-07 20:41:54,112 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:41:56,723 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:41:57,267 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:04,122 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:04,824 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:05,241 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:42:14,776 - INFO - Device selected: 0x05ac:0x3324 - Authorized
+2025-05-07 20:42:15,657 - INFO - Removed from whitelist: 0x05ac:0x3324
+2025-05-07 20:42:21,339 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:21,766 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:42:24,803 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:29,786 - INFO - Device selected: 0x05ac:0x3324 - Unauthorized
+2025-05-07 20:42:31,881 - INFO - Added to whitelist: 0x05ac:0x3324
+2025-05-07 20:42:40,117 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 20:42:40,120 - INFO - Logged event: DISCONNECTED for 0x05ac:0x3324
+2025-05-07 20:42:40,121 - INFO - Logged event: DISCONNECTED for 0x48d2:0xc539
+2025-05-07 20:42:42,528 - INFO - Device selected: 0x8086:0x8511 - Unauthorized
+2025-05-07 20:42:43,686 - INFO - Added to whitelist: 0x8086:0x8511
+2025-05-07 20:42:51,050 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:42:51,051 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539
+2025-05-07 20:42:51,053 - INFO - Logged event: DISCONNECTED for 0x8086:0x8511
+2025-05-07 20:43:06,413 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:43:06,414 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:43:06,415 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:43:06,417 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:43:06,419 - INFO - Logged event: DISCONNECTED for 0x8086:0x8511
+2025-05-07 20:43:06,462 - INFO - Alert triggered for 0x48d2:0xc539, bsd_name: None
+2025-05-07 20:43:06,462 - WARNING - No BSD Name available, eject disabled
+2025-05-07 20:43:12,975 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 20:43:12,976 - INFO - Logged event: DISCONNECTED for 0x05ac:0x3324
+2025-05-07 20:43:12,977 - INFO - Logged event: DISCONNECTED for 0x48d2:0xc539
+2025-05-07 20:43:17,337 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:43:17,339 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539
+2025-05-07 20:43:17,340 - INFO - Logged event: DISCONNECTED for 0x8086:0x8511
+2025-05-07 20:43:30,849 - INFO - Device selected: 0x8086:0x8511 - Authorized
+2025-05-07 20:43:34,438 - INFO - Device already in whitelist: 0x8086:0x8511
+2025-05-07 20:43:43,544 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:43:43,545 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:43:43,546 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:43:43,548 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:43:43,549 - INFO - Logged event: DISCONNECTED for 0x8086:0x8511
+2025-05-07 20:43:43,707 - INFO - Alert triggered for 0x48d2:0xc539, bsd_name: None
+2025-05-07 20:43:43,708 - WARNING - No BSD Name available, eject disabled
+2025-05-07 20:48:08,419 - INFO - Logger initialized successfully
+2025-05-07 20:48:08,444 - INFO - Database initialized successfully
+2025-05-07 20:48:09,082 - INFO - Alert callback set
+2025-05-07 20:48:09,084 - INFO - Monitoring USB devices...
+2025-05-07 20:48:11,503 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x8086:0x8511
+2025-05-07 20:48:11,504 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:48:11,505 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:48:11,506 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:48:11,579 - INFO - Alert triggered for 0x48d2:0xc539, bsd_name: None
+2025-05-07 20:48:11,579 - WARNING - No BSD Name available, eject disabled
+2025-05-07 20:48:14,568 - INFO - Device selected: 0x48d2:0xc539 - Unauthorized
+2025-05-07 20:48:30,256 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0xc539
+2025-05-07 20:48:30,259 - INFO - Logged event: DISCONNECTED for 0x05ac:0x3324
+2025-05-07 20:48:30,261 - INFO - Logged event: DISCONNECTED for 0x48d2:0xc539
+2025-05-07 20:48:37,186 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x05ac:0x3324
+2025-05-07 20:48:37,187 - WARNING - Unauthorized device detected: 0x48d2:0xc539
+2025-05-07 20:48:37,189 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x48d2:0xc539
+2025-05-07 20:48:37,191 - INFO - Logged event: DISCONNECTED for 0x05ac:0xc539
+2025-05-07 20:48:37,226 - INFO - Alert triggered for 0x48d2:0xc539, bsd_name: None
+2025-05-07 20:48:37,227 - WARNING - No BSD Name available, eject disabled

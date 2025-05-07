@@ -66,6 +66,22 @@ def add_to_whitelist(vendor_id, product_id):
         if conn:
             conn.close()
 
+def remove_from_whitelist(vendor_id, product_id):
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+        c.execute("DELETE FROM whitelist WHERE vendor_id=? AND product_id=?", (vendor_id, product_id))
+        conn.commit()
+        if c.rowcount > 0:
+            logging.info(f"Removed from whitelist: {vendor_id}:{product_id}")
+        else:
+            logging.warning(f"Device not found in whitelist: {vendor_id}:{product_id}")
+    except sqlite3.Error as e:
+        logging.error(f"Error removing from whitelist: {e}")
+    finally:
+        if conn:
+            conn.close()
+
 def log_event(timestamp, vendor_id, product_id, action):
     try:
         conn = sqlite3.connect(DB_FILE)

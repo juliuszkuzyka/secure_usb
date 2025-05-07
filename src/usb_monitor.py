@@ -4,15 +4,36 @@ import logging
 from datetime import datetime
 from .database import is_device_whitelisted, log_event
 from threading import Event
+import queue
+import subprocess
+import re
 
 system = platform.system()
-alert_callback = None
+alert_queue = queue.Queue()
 stop_event = Event()
 _already_alerted = set()
 
 def set_alert_callback(callback):
     global alert_callback
     alert_callback = callback
+    logging.info("Alert callback set")
+
+def get_bsd_name_for_usb(vendor_id, product_id):
+    """Map USB device (vendor_id, product_id) to BSD Name using diskutil on macOS."""
+    if system != "Darwin":
+        return None
+    try:
+        output = subprocess.check_output(["diskutil", "list"]).decode()
+        disks = output.split("\n\n")
+        for disk in disks:
+            if f"Vendor ID: {vendor_id}" in disk and f"Product ID: {product_id}" in disk:
+                match = re.search(r"/dev/(disk\d+)", disk)
+                if match:
+                    return match.group(1)
+        return None
+    except Exception as e:
+        logging.error(f"Error getting BSD Name with diskutil: {e}")
+        return None
 
 def get_connected_devices():
     devices = set()
@@ -33,11 +54,13 @@ def get_connected_devices():
 
     elif system == "Darwin":
         try:
-            import subprocess, re
             output = subprocess.check_output(["system_profiler", "SPUSBDataType"]).decode()
             matches = re.findall(r"Vendor ID: 0x(\w+).*?Product ID: 0x(\w+)", output, re.DOTALL)
-            for match in matches:
-                devices.add((f"0x{match[0]}", f"0x{match[1]}"))
+            for vendor_id, product_id in matches:
+                vendor_id = f"0x{vendor_id}"
+                product_id = f"0x{product_id}"
+                bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
+                devices.add((vendor_id, product_id, bsd_name))
         except Exception as e:
             logging.error(f"macOS USB error: {e}")
 
@@ -66,19 +89,19 @@ def monitor_usb():
             added = current_devices - previous_devices
             removed = previous_devices - current_devices
 
-            for vendor_id, product_id in added:
+            for vendor_id, product_id, *extra in added:
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 if is_device_whitelisted(vendor_id, product_id):
                     action = "AUTHORIZED_CONNECTED"
                 else:
                     action = "UNAUTHORIZED_CONNECTED"
-                    logging.warning(f"Unauthorized device: {vendor_id}:{product_id}")
-                    if alert_callback and (vendor_id, product_id) not in _already_alerted:
-                        alert_callback(vendor_id, product_id)
+                    logging.warning(f"Unauthorized device detected: {vendor_id}:{product_id}")
+                    if (vendor_id, product_id) not in _already_alerted:
+                        alert_queue.put((vendor_id, product_id, extra[0] if extra else None))
                         _already_alerted.add((vendor_id, product_id))
                 log_event(timestamp, vendor_id, product_id, action)
 
-            for vendor_id, product_id in removed:
+            for vendor_id, product_id, *_ in removed:
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 log_event(timestamp, vendor_id, product_id, "DISCONNECTED")
                 _already_alerted.discard((vendor_id, product_id))
