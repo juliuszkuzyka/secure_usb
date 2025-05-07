@@ -18,7 +18,7 @@ class USBMonitorApp(ctk.CTk):
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("blue")
 
-        self.devices = set()
+        self.devices = set()  # Przechowywanie aktualnej listy urządzeń
         self.setup_ui()
         Thread(target=monitor_usb, daemon=True).start()
         self.update_gui()
@@ -68,23 +68,27 @@ class USBMonitorApp(ctk.CTk):
 
     def update_gui(self):
         try:
-            self.device_listbox.delete("0.0", "end")
-            self.whitelist_listbox.delete("0.0", "end")
-
             current_devices = get_connected_devices()
-            if current_devices != self.devices:
-                self.devices = current_devices
-                for vendor_id, product_id in sorted(self.devices):
-                    status = "Authorized" if is_device_whitelisted(vendor_id, product_id) else "Unauthorized"
-                    self.device_listbox.insert("end", f"{vendor_id}:{product_id} - {status}\n")
+            existing_entries = set(self.device_listbox.get("0.0", "end").split("\n"))
 
+            # Aktualizacja listy urządzeń, ale BEZ jej całkowitego czyszczenia
+            for vendor_id, product_id in sorted(current_devices):
+                status = "Authorized" if is_device_whitelisted(vendor_id, product_id) else "Unauthorized"
+                entry = f"{vendor_id}:{product_id} - {status}"
+
+                if entry not in existing_entries:  # Zapobieganie duplikatom
+                    self.device_listbox.insert("end", entry + "\n")
+
+            # Pobieranie whitelisty i jej aktualizacja
             conn = sqlite3.connect(DB_FILE)
             c = conn.cursor()
             c.execute("SELECT vendor_id, product_id FROM whitelist")
+            self.whitelist_listbox.delete("0.0", "end")
             for vid, pid in c.fetchall():
                 self.whitelist_listbox.insert("end", f"{vid}:{pid}\n")
             conn.close()
 
+            # Aktualizacja logów
             self.log_text.delete("0.0", "end")
             if os.path.exists(LOG_FILE):
                 with open(LOG_FILE, "r") as f:
@@ -94,7 +98,9 @@ class USBMonitorApp(ctk.CTk):
         except Exception as e:
             logging.error(f"GUI update error: {e}")
             self.status_label.configure(text=f"Error: {e}")
-        self.after(2000, self.update_gui)
+
+        # Dłuższy czas odświeżania GUI (możesz dostosować do potrzeb)
+        self.after(5000, self.update_gui)
 
     def add_to_whitelist(self):
         try:
