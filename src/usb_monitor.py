@@ -24,12 +24,20 @@ def get_bsd_name_for_usb(vendor_id, product_id):
         return None
     try:
         output = subprocess.check_output(["diskutil", "list"]).decode()
+        logging.debug(f"diskutil list output: {output}")
         disks = output.split("\n\n")
         for disk in disks:
-            if f"Vendor ID: {vendor_id}" in disk and f"Product ID: {product_id}" in disk:
-                match = re.search(r"/dev/(disk\d+)", disk)
-                if match:
-                    return match.group(1)
+            if f"Vendor: " in disk and f"Product: " in disk:
+                vid_match = re.search(r"Vendor: (\w+)", disk)
+                pid_match = re.search(r"Product: (\w+)", disk)
+                if vid_match and pid_match:
+                    disk_vendor_id = f"0x{vid_match.group(1)}"
+                    disk_product_id = f"0x{pid_match.group(1)}"
+                    if disk_vendor_id.lower() == vendor_id.lower() and disk_product_id.lower() == product_id.lower():
+                        bsd_match = re.search(r"/dev/(disk\d+)", disk)
+                        if bsd_match:
+                            return bsd_match.group(1)
+        logging.warning(f"No BSD Name found for {vendor_id}:{product_id}")
         return None
     except Exception as e:
         logging.error(f"Error getting BSD Name with diskutil: {e}")
@@ -37,18 +45,22 @@ def get_bsd_name_for_usb(vendor_id, product_id):
 
 def get_connected_devices():
     devices = set()
+    logging.info(f"Detecting USB devices on {system}...")
 
     if system == "Windows":
         try:
             import win32com.client
+            logging.info("Accessing WMI for USB devices...")
             wmi = win32com.client.GetObject("winmgmts:")
             for usb in wmi.InstancesOf("Win32_USBControllerDevice"):
                 dependent = usb.Dependent
+                logging.debug(f"Dependent: {dependent}")
                 if "VID_" in dependent and "PID_" in dependent:
                     vid_pid = dependent.split("VID_")[1]
                     vendor_id = f"0x{vid_pid[:4].lower()}"
                     product_id = f"0x{vid_pid[9:13].lower()}"
                     devices.add((vendor_id, product_id))
+                    logging.info(f"Found device: {vendor_id}:{product_id}")
         except Exception as e:
             logging.error(f"Windows USB error: {e}")
 
@@ -61,6 +73,7 @@ def get_connected_devices():
                 product_id = f"0x{product_id}"
                 bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
                 devices.add((vendor_id, product_id, bsd_name))
+                logging.info(f"Found device: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
         except Exception as e:
             logging.error(f"macOS USB error: {e}")
 
@@ -73,9 +86,11 @@ def get_connected_devices():
                 product_id = device.get('ID_MODEL_ID')
                 if vendor_id and product_id:
                     devices.add((f"0x{vendor_id}", f"0x{product_id}"))
+                    logging.info(f"Found device: {vendor_id}:{product_id}")
         except Exception as e:
             logging.error(f"Linux USB error: {e}")
 
+    logging.info(f"Total devices found: {len(devices)}")
     return devices
 
 def monitor_usb():
