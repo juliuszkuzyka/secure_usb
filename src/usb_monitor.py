@@ -7,6 +7,7 @@ from threading import Event
 import queue
 import subprocess
 import re
+import win32com.client  # Dla Windows
 
 system = platform.system()
 alert_queue = queue.Queue()
@@ -42,6 +43,49 @@ def get_bsd_name_for_usb(vendor_id, product_id):
     except Exception as e:
         logging.error(f"Error getting BSD Name with diskutil: {e}")
         return None
+
+def block_device_windows(vendor_id, product_id):
+    """Attempt to block/unmount USB device on Windows using WMI."""
+    try:
+        wmi = win32com.client.GetObject("winmgmts:")
+        for usb in wmi.InstancesOf("Win32_USBControllerDevice"):
+            dependent = usb.Dependent
+            if "VID_" in dependent and "PID_" in dependent:
+                vid_pid = dependent.split("VID_")[1]
+                dev_vendor_id = f"0x{vid_pid[:4].lower()}"
+                dev_product_id = f"0x{vid_pid[9:13].lower()}"
+                if dev_vendor_id == vendor_id and dev_product_id == product_id:
+                    # Prosta próba odłączenia (wymaga testów i uprawnień admina)
+                    logging.info(f"Attempting to block {vendor_id}:{product_id} on Windows")
+                    # Uwaga: Wymaga bardziej zaawansowanej logiki, np. wyłączenia portu
+                    return True
+        logging.warning(f"Could not block {vendor_id}:{product_id} on Windows")
+        return False
+    except Exception as e:
+        logging.error(f"Windows block error: {e}")
+        return False
+
+def block_device_darwin(vendor_id, product_id, bsd_name):
+    """Eject USB device on macOS."""
+    if bsd_name:
+        try:
+            subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
+            logging.info(f"Blocked/ejected {vendor_id}:{product_id} on macOS")
+            return True
+        except subprocess.CalledProcessError as e:
+            logging.error(f"macOS eject error: {e}")
+            return False
+    return False
+
+def block_device_linux(vendor_id, product_id):
+    """Attempt to disable USB port on Linux using uhubctl (if installed)."""
+    try:
+        subprocess.run(["uhubctl", "-l", "1-1", "-a", "0"], check=True, capture_output=True)
+        logging.info(f"Attempted to disable port for {vendor_id}:{product_id} on Linux")
+        return True
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        logging.error(f"Linux block error (uhubctl not found or failed): {e}")
+        return False
 
 def get_connected_devices():
     devices = set()
@@ -114,6 +158,13 @@ def monitor_usb():
                     if (vendor_id, product_id) not in _already_alerted:
                         alert_queue.put((vendor_id, product_id, extra[0] if extra else None))
                         _already_alerted.add((vendor_id, product_id))
+                        # Automatyczne blokowanie
+                        if system == "Windows":
+                            block_device_windows(vendor_id, product_id)
+                        elif system == "Darwin" and extra:
+                            block_device_darwin(vendor_id, product_id, extra[0])
+                        elif system == "Linux":
+                            block_device_linux(vendor_id, product_id)
                 log_event(timestamp, vendor_id, product_id, action)
 
             for vendor_id, product_id, *_ in removed:

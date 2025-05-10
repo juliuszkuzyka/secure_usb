@@ -366,7 +366,7 @@ class USBMonitorApp(ctk.CTk):
             if not self.selected_device:
                 messagebox.showwarning("Warning", "Please select a device to whitelist.")
                 return
-            vendor_id, product_id = self.selected_device.split(" - ")[0].split(":")[1:]
+            vendor_id, product_id = self.selected_device.split(" - ")[0].split(":")
             add_to_whitelist(vendor_id, product_id)
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} added.")
             self.update_gui()
