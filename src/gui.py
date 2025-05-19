@@ -18,11 +18,16 @@ from config import LOG_FILE, DB_FILE
 class USBMonitorApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        logging.basicConfig(filename="logs/events.log", level=logging.DEBUG, filemode='w')
-        logging.info("Initializing USBMonitorApp")
+        logging.basicConfig(
+            filename="logs/events.log",
+            level=logging.INFO,
+            filemode='w',
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        logging.info("[INIT] Starting USBMonitorApp")
         self.title("USB Security Monitor")
         self.geometry("1400x900")
-        self.configure(fg_color="#0D1B2A")  # Ciemne tło z nutą granatu
+        self.configure(fg_color="#0D1B2A")
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("dark-blue")
 
@@ -37,12 +42,10 @@ class USBMonitorApp(ctk.CTk):
         self.update_gui()
 
     def setup_ui(self):
-        logging.info("Setting up UI")
-        # Główny kontener
+        logging.info("[INIT] Setting up UI")
         self.main_frame = ctk.CTkFrame(self, fg_color="#0D1B2A", corner_radius=0)
         self.main_frame.pack(fill="both", expand=True, padx=15, pady=15)
 
-        # Nagłówek z gradientem
         self.header_frame = ctk.CTkFrame(self.main_frame, fg_color="#1B263B", corner_radius=10, border_width=1, border_color="#415A77")
         self.header_frame.pack(fill="x", pady=(0, 10))
         self.header_label = ctk.CTkLabel(
@@ -54,19 +57,16 @@ class USBMonitorApp(ctk.CTk):
         )
         self.header_label.pack(pady=10, padx=15)
 
-        # Główna sekcja z grid
         self.content_frame = ctk.CTkFrame(self.main_frame, fg_color="#0D1B2A")
         self.content_frame.pack(fill="both", expand=True)
         self.content_frame.grid_columnconfigure((0, 1), weight=1)
         self.content_frame.grid_rowconfigure(0, weight=1)
 
-        # Lewa sekcja: Urządzenia i Whitelist
         self.left_frame = ctk.CTkFrame(self.content_frame, fg_color="#1B263B", corner_radius=10)
         self.left_frame.grid(row=0, column=0, padx=(0, 10), pady=0, sticky="nsew")
         self.left_frame.grid_columnconfigure(0, weight=1)
         self.left_frame.grid_rowconfigure(1, weight=1)
 
-        # Sekcja urządzeń
         self.device_label = ctk.CTkLabel(
             self.left_frame,
             text="📟 Connected USB Devices",
@@ -75,7 +75,6 @@ class USBMonitorApp(ctk.CTk):
         )
         self.device_label.grid(row=0, column=0, pady=(10, 5), padx=10, sticky="w")
 
-        # Używamy tkinter.Text dla obsługi tagów i zaznaczania
         self.device_textbox = Text(
             self.left_frame,
             height=10,
@@ -84,12 +83,11 @@ class USBMonitorApp(ctk.CTk):
             fg="#D4D4D4",
             insertbackground="#D4D4D4",
             wrap="none",
-            cursor="hand2"  # Kursor wskazujący na klikalność
+            cursor="hand2"
         )
         self.device_textbox.grid(row=1, column=0, padx=10, pady=(0, 10), sticky="nsew")
-        self.device_textbox.bind("<Button-1>", self.on_device_select)  # Podpinamy zdarzenie kliknięcia
+        self.device_textbox.bind("<Button-1>", self.on_device_select)
 
-        # Sekcja whitelist
         self.whitelist_label = ctk.CTkLabel(
             self.left_frame,
             text="✅ Whitelisted Devices",
@@ -109,7 +107,6 @@ class USBMonitorApp(ctk.CTk):
         )
         self.whitelist_textbox.grid(row=3, column=0, padx=10, pady=(0, 10), sticky="nsew")
 
-        # Prawa sekcja: Logi i eksport
         self.right_frame = ctk.CTkFrame(self.content_frame, fg_color="#1B263B", corner_radius=10)
         self.right_frame.grid(row=0, column=1, padx=(10, 0), pady=0, sticky="nsew")
         self.right_frame.grid_columnconfigure(0, weight=1)
@@ -167,7 +164,6 @@ class USBMonitorApp(ctk.CTk):
             corner_radius=8
         ).pack(pady=10)
 
-        # Przyciski akcji
         self.buttons_frame = ctk.CTkFrame(self.main_frame, fg_color="#0D1B2A")
         self.buttons_frame.pack(fill="x", pady=10)
         self.add_button = ctk.CTkButton(
@@ -204,7 +200,6 @@ class USBMonitorApp(ctk.CTk):
         )
         self.refresh_button.pack(side="left", padx=5)
 
-        # Sekcja eject
         self.block_frame = ctk.CTkFrame(self.main_frame, fg_color="#0D1B2A")
         self.block_frame.pack(fill="x", pady=5)
         self.block_button = ctk.CTkButton(
@@ -215,17 +210,15 @@ class USBMonitorApp(ctk.CTk):
             hover_color="#C0392B",
             font=("Segoe UI", 14),
             corner_radius=8,
-            state="disabled",
+            state="normal",
             width=300
         )
         self.block_button.pack(pady=5)
 
-        # Pasek postępu
         self.progress = ctk.CTkProgressBar(self.main_frame, width=700, progress_color="#3498DB", fg_color="#2D2D2D")
         self.progress.set(0)
         self.progress.pack(pady=10)
 
-        # Status i alert
         self.status_frame = ctk.CTkFrame(self.main_frame, fg_color="#0D1B2A")
         self.status_frame.pack(fill="x", pady=5)
         self.status_label = ctk.CTkLabel(
@@ -250,59 +243,59 @@ class USBMonitorApp(ctk.CTk):
 
     def alert_unauthorized(self, vendor_id, product_id, bsd_name=None):
         self.unauthorized_device = (vendor_id, product_id, bsd_name)
-        self.alert_label.configure(text=f"⚠️ Unauthorized Device Detected: {vendor_id}:{product_id}")
+        self.alert_label.configure(text=f"⚠️ Unauthorized Device: {vendor_id}:{product_id}")
         self.alert_frame.pack(pady=5)
         self.alert_frame.lift()
-        logging.info(f"Alert triggered for {vendor_id}:{product_id}, bsd_name: {bsd_name}")
-        if bsd_name:
-            self.block_button.configure(state="normal")
-        else:
-            self.block_button.configure(state="disabled")
-            logging.warning("No BSD Name available, eject disabled")
+        logging.info(f"[ALERT] Unauthorized device: {vendor_id}:{product_id}")
+        if not bsd_name:
+            logging.warning(f"[BLOCK] Cannot eject {vendor_id}:{product_id}: No BSD Name")
 
     def eject_device(self):
         if self.unauthorized_device:
             vendor_id, product_id, bsd_name = self.unauthorized_device
-            if platform.system() == "Darwin" and bsd_name:
-                try:
-                    subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
-                    messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} ejected.")
-                    self.unauthorized_device = None
-                    self.block_button.configure(state="disabled")
-                    self.alert_frame.pack_forget()
-                    self.update_gui()
-                except subprocess.CalledProcessError as e:
-                    messagebox.showerror("Error", f"Failed to eject device: {e}. Requires admin privileges.")
-                    logging.error(f"Eject error: {e}")
+            if platform.system() == "Darwin":
+                if bsd_name:
+                    try:
+                        subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
+                        logging.info(f"[BLOCK] Ejected {vendor_id}:{product_id}")
+                        messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} ejected.")
+                        self.unauthorized_device = None
+                        self.alert_frame.pack_forget()
+                    except subprocess.CalledProcessError as e:
+                        logging.error(f"[BLOCK] Eject failed for {vendor_id}:{product_id}: {e}")
+                        messagebox.showerror("Error", f"Failed to eject device: {e}. Requires admin privileges.")
+                else:
+                    logging.warning(f"[BLOCK] Cannot eject {vendor_id}:{product_id}: No BSD Name")
+                    messagebox.showwarning("Warning", "Cannot eject: Device not identified (no BSD Name).")
             else:
-                messagebox.showwarning("Warning", "Eject not supported on this system or device not identified.")
-                logging.warning(f"Eject not supported for {vendor_id}:{product_id}")
+                logging.warning(f"[BLOCK] Eject not supported for {vendor_id}:{product_id}")
+                messagebox.showwarning("Warning", "Eject not supported on this system.")
             self.update_gui()
+        else:
+            logging.info("[ACTION] No unauthorized device to eject")
+            messagebox.showinfo("Info", "No unauthorized device to eject.")
 
     def on_device_select(self, event):
         try:
-            # Pobierz wybraną linię z textbox
             cursor_pos = self.device_textbox.index("current")
             line_num = int(float(cursor_pos))
             lines = self.device_textbox.get("1.0", "end").splitlines()
             if 1 <= line_num <= len(lines):
-                # Wyodrębnij vendor_id:product_id z linii (np. "✅ 0x0951:0x172b - Authorized")
                 line = lines[line_num - 1].strip()
-                device_id = line.split(" - ")[0].split(" ", 1)[-1]  # Pomija ikonę (✅/❌)
+                device_id = line.split(" - ")[0].split(" ", 1)[-1]
                 self.selected_device = device_id
-                # Podświetl wybraną linię
                 self.device_textbox.tag_remove("selected", "1.0", END)
                 self.device_textbox.tag_add("selected", f"{line_num}.0", f"{line_num}.end")
                 self.device_textbox.tag_configure("selected", background="#4A90E2", foreground="#FFFFFF")
                 self.status_label.configure(text=f"Selected: {self.selected_device}")
-                logging.info(f"Device selected: {self.selected_device}")
+                logging.info(f"[ACTION] Selected: {self.selected_device}")
             else:
                 self.selected_device = None
                 self.device_textbox.tag_remove("selected", "1.0", END)
                 self.status_label.configure(text="Monitoring USB devices... 🔍")
-                logging.info("No device selected")
+                logging.info("[ACTION] Selection cleared")
         except Exception as e:
-            logging.error(f"Error in on_device_select: {e}")
+            logging.error(f"[ACTION] Selection error: {e}")
             self.selected_device = None
             self.device_textbox.tag_remove("selected", "1.0", END)
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
@@ -317,16 +310,21 @@ class USBMonitorApp(ctk.CTk):
                 messagebox.showwarning("Warning", f"Device {vendor_id}:{product_id} is not whitelisted.")
                 return
             remove_from_whitelist(vendor_id, product_id)
+            logging.info(f"[WHITELIST] Removed: {vendor_id}:{product_id}")
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} removed from whitelist.")
+            # Sprawdź, czy urządzenie jest podłączone i nieautoryzowane
+            for dev_vendor_id, dev_product_id, bsd_name in self.devices:
+                if dev_vendor_id == vendor_id and dev_product_id == product_id:
+                    if not is_device_whitelisted(vendor_id, product_id):
+                        self.alert_unauthorized(vendor_id, product_id, bsd_name)
+                        break
             self.update_gui()
         except Exception as e:
-            logging.error(f"Remove from whitelist error: {e}")
+            logging.error(f"[WHITELIST] Remove error: {e}")
             messagebox.showerror("Error", str(e))
 
     def update_gui(self):
         try:
-            logging.info("Updating GUI")
-            # Aktualizacja listy urządzeń
             current_devices = get_connected_devices()
             self.device_textbox.delete("1.0", END)
 
@@ -346,10 +344,8 @@ class USBMonitorApp(ctk.CTk):
 
             if not unauthorized_detected and self.unauthorized_device:
                 self.unauthorized_device = None
-                self.block_button.configure(state="disabled")
                 self.alert_frame.pack_forget()
 
-            # Aktualizacja listy whitelist
             self.whitelist_textbox.delete("1.0", END)
             try:
                 conn = sqlite3.connect(DB_FILE)
@@ -359,25 +355,24 @@ class USBMonitorApp(ctk.CTk):
                     self.whitelist_textbox.insert(END, f"✔️ {vid}:{pid}\n")
                 conn.close()
             except sqlite3.Error as e:
-                logging.error(f"Error fetching whitelist: {e}")
+                logging.error(f"[WHITELIST] Fetch error: {e}")
 
-            # Aktualizacja logów
             self.log_text.delete("1.0", END)
             try:
                 if os.path.exists(LOG_FILE):
                     with open(LOG_FILE, "r") as f:
                         self.log_text.insert(END, f.read())
                     self.log_text.see(END)
-                    logging.info("Logs successfully loaded into GUI")
+                    logging.debug("[GUI] Logs loaded")
                 else:
-                    logging.warning(f"Log file {LOG_FILE} does not exist")
+                    logging.warning(f"[GUI] Log file {LOG_FILE} not found")
                     self.log_text.insert(END, "Log file not found\n")
             except Exception as e:
-                logging.error(f"Error loading logs: {e}")
+                logging.error(f"[GUI] Log load error: {e}")
                 self.log_text.insert(END, f"Error loading logs: {e}\n")
 
         except Exception as e:
-            logging.error(f"GUI update error: {e}")
+            logging.error(f"[GUI] Update error: {e}")
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
 
         self.after(5000, self.update_gui)
@@ -395,10 +390,11 @@ class USBMonitorApp(ctk.CTk):
                 return
             vendor_id, product_id = self.selected_device.split(":")
             add_to_whitelist(vendor_id, product_id)
+            logging.info(f"[WHITELIST] Added: {vendor_id}:{product_id}")
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} added.")
             self.update_gui()
         except Exception as e:
-            logging.error(f"Add to whitelist error: {e}")
+            logging.error(f"[WHITELIST] Add error: {e}")
             messagebox.showerror("Error", str(e))
 
     def export_logs_csv(self):
@@ -413,9 +409,10 @@ class USBMonitorApp(ctk.CTk):
                 writer.writerow(["Log Entry"])
                 for log in logs:
                     writer.writerow([log.strip()])
+            logging.info("[ACTION] Exported to CSV")
             messagebox.showinfo("Success", "Logs exported to CSV.")
         except Exception as e:
-            logging.error(f"Export CSV error: {e}")
+            logging.error(f"[ACTION] CSV export error: {e}")
             messagebox.showerror("Error", str(e))
 
     def export_logs_json(self):
@@ -428,12 +425,13 @@ class USBMonitorApp(ctk.CTk):
             log_data = [{"entry": log.strip()} for log in logs]
             with open(f"logs_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json", "w") as f:
                 json.dump(log_data, f, indent=4)
+            logging.info("[ACTION] Exported to JSON")
             messagebox.showinfo("Success", "Logs exported to JSON.")
         except Exception as e:
-            logging.error(f"Export JSON error: {e}")
+            logging.error(f"[ACTION] JSON export error: {e}")
             messagebox.showerror("Error", str(e))
 
 if __name__ == "__main__":
     app = USBMonitorApp()
     app.mainloop()
-    logging.info("Application closed")
+    logging.info("[INIT] Application closed")

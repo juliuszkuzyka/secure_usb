@@ -16,17 +16,42 @@ _already_alerted = set()
 def set_alert_callback(callback):
     global alert_callback
     alert_callback = callback
-    logging.info("Alert callback set")
+    logging.info("[INIT] Alert callback set")
 
 def get_bsd_name_for_usb(vendor_id, product_id):
-    """Map USB device (vendor_id, product_id) to BSD Name using system_profiler and ioreg on macOS."""
+    """Map USB device to BSD Name on macOS using diskutil, with system_profiler as fallback."""
     if system != "Darwin":
         return None
 
-    # Próba 1: Użyj system_profiler
+    # Próba 1: Użyj diskutil
+    try:
+        output = subprocess.check_output(["diskutil", "list"], stderr=subprocess.STDOUT).decode(errors="ignore")
+        logging.debug(f"[BSD] diskutil list output:\n{output}")
+        disk_pattern = re.compile(r"/dev/(disk\d+)(?:s\d+)?")
+        disks = disk_pattern.findall(output)
+        for disk in set(disks):
+            try:
+                info_output = subprocess.check_output(["diskutil", "info", disk], stderr=subprocess.STDOUT).decode(errors="ignore")
+                logging.debug(f"[BSD] diskutil info {disk}:\n{info_output}")
+                vid_match = re.search(r"Vendor ID\s*:\s*0x(\w+)", info_output, re.IGNORECASE)
+                pid_match = re.search(r"Product ID\s*:\s*0x(\w+)", info_output, re.IGNORECASE)
+                if vid_match and pid_match:
+                    current_vid = f"0x{vid_match.group(1).lower()}"
+                    current_pid = f"0x{pid_match.group(1).lower()}"
+                    if current_vid == vendor_id.lower() and current_pid == product_id.lower():
+                        logging.info(f"[BSD] Found BSD Name: {disk} for {vendor_id}:{product_id} via diskutil")
+                        return disk
+            except subprocess.CalledProcessError as e:
+                logging.debug(f"[BSD] diskutil info {disk} failed: {e}")
+                continue
+        logging.debug(f"[BSD] No BSD Name for {vendor_id}:{product_id} via diskutil")
+    except Exception as e:
+        logging.debug(f"[BSD] diskutil error: {e}")
+
+    # Próba 2: Fallback na system_profiler
     try:
         output = subprocess.check_output(["system_profiler", "SPUSBDataType"], stderr=subprocess.STDOUT).decode(errors="ignore")
-        logging.debug(f"system_profiler output:\n{output}")
+        logging.debug(f"[BSD] system_profiler output:\n{output}")
         lines = output.splitlines()
         current_device = None
         current_vid = None
@@ -37,70 +62,29 @@ def get_bsd_name_for_usb(vendor_id, product_id):
             stripped_line = line.lstrip()
             indent = len(line) - len(stripped_line)
             indent_level = indent // 2
-            logging.debug(f"Line: '{stripped_line}' | Indent: {indent_level}")
-
             if stripped_line.endswith(":") and indent_level <= 1:
                 current_device = stripped_line[:-1]
                 current_vid = None
                 current_pid = None
-                logging.debug(f"Device: {current_device}")
                 continue
-
             vid_match = re.search(r"Vendor ID:\s*(0x\w+)(?:\s*\(.*\))?", stripped_line)
             if vid_match:
                 current_vid = vid_match.group(1).lower()
-                logging.debug(f"Vendor ID: {current_vid} for {current_device}")
-
             pid_match = re.search(r"Product ID:\s*(0x\w+)", stripped_line)
             if pid_match:
                 current_pid = pid_match.group(1).lower()
-                logging.debug(f"Product ID: {current_pid} for {current_device}")
-
             bsd_match = re.search(r"BSD Name:\s*(disk\d+)", stripped_line)
             if bsd_match and current_vid and current_pid:
                 bsd_name = bsd_match.group(1)
-                logging.debug(f"BSD Name: {bsd_name} for {current_vid}:{current_pid}")
                 if current_vid == vendor_id.lower() and current_pid == product_id.lower():
-                    logging.info(f"Matched BSD Name: {bsd_name} for {vendor_id}:{product_id} via system_profiler")
+                    logging.info(f"[BSD] Found BSD Name: {bsd_name} for {vendor_id}:{product_id} via system_profiler")
                     return bsd_name
-
-        logging.warning(f"No BSD Name found for {vendor_id}:{product_id} via system_profiler")
+        logging.debug(f"[BSD] No BSD Name for {vendor_id}:{product_id} via system_profiler")
     except Exception as e:
-        logging.error(f"Error with system_profiler: {e}")
+        logging.debug(f"[BSD] system_profiler error: {e}")
 
-    # Próba 2: Użyj ioreg jako fallback
-    try:
-        output = subprocess.check_output(["ioreg", "-p", "IOUSB", "-w0", "-l"], stderr=subprocess.STDOUT).decode(errors="ignore")
-        logging.debug(f"ioreg output:\n{output}")
-        lines = output.splitlines()
-        current_vid = None
-        current_pid = None
-
-        for line in lines:
-            stripped_line = line.strip()
-            vid_match = re.search(r'"idVendor" = 0x(\w+)', stripped_line)
-            if vid_match:
-                current_vid = f"0x{vid_match.group(1).lower()}"
-                logging.debug(f"ioreg Vendor ID: {current_vid}")
-
-            pid_match = re.search(r'"idProduct" = 0x(\w+)', stripped_line)
-            if pid_match:
-                current_pid = f"0x{pid_match.group(1).lower()}"
-                logging.debug(f"ioreg Product ID: {current_pid}")
-
-            bsd_match = re.search(r'"BSD Name" = "disk(\d+)"', stripped_line)
-            if bsd_match and current_vid and current_pid:
-                bsd_name = f"disk{bsd_match.group(1)}"
-                logging.debug(f"ioreg BSD Name: {bsd_name} for {current_vid}:{current_pid}")
-                if current_vid == vendor_id.lower() and current_pid == product_id.lower():
-                    logging.info(f"Matched BSD Name: {bsd_name} for {vendor_id}:{product_id} via ioreg")
-                    return bsd_name
-
-        logging.warning(f"No BSD Name found for {vendor_id}:{product_id} via ioreg")
-        return None
-    except Exception as e:
-        logging.error(f"Error with ioreg: {e}")
-        return None
+    logging.debug(f"[BSD] No BSD Name found for {vendor_id}:{product_id}")
+    return None
 
 def block_device_windows(vendor_id, product_id):
     try:
@@ -113,38 +97,38 @@ def block_device_windows(vendor_id, product_id):
                 dev_vendor_id = f"0x{vid_pid[:4].lower()}"
                 dev_product_id = f"0x{vid_pid[9:13].lower()}"
                 if dev_vendor_id == vendor_id and dev_product_id == product_id:
-                    logging.info(f"Blocking {vendor_id}:{product_id} on Windows")
+                    logging.info(f"[BLOCK] Blocking {vendor_id}:{product_id} on Windows")
                     return True
-        logging.warning(f"Could not block {vendor_id}:{product_id} on Windows")
+        logging.warning(f"[BLOCK] Could not block {vendor_id}:{product_id} on Windows")
         return False
     except Exception as e:
-        logging.error(f"Windows block error: {e}")
+        logging.error(f"[BLOCK] Windows block error: {e}")
         return False
 
 def block_device_darwin(vendor_id, product_id, bsd_name):
     if bsd_name:
         try:
             subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
-            logging.info(f"Ejected {vendor_id}:{product_id} on macOS")
+            logging.info(f"[BLOCK] Ejected {vendor_id}:{product_id} on macOS")
             return True
         except subprocess.CalledProcessError as e:
-            logging.error(f"macOS eject error: {e}")
+            logging.error(f"[BLOCK] macOS eject error: {e}")
             return False
-    logging.warning(f"No BSD Name for {vendor_id}:{product_id}, cannot eject")
+    logging.warning(f"[BLOCK] No BSD Name for {vendor_id}:{product_id}, cannot eject")
     return False
 
 def block_device_linux(vendor_id, product_id):
     try:
         subprocess.run(["uhubctl", "-l", "1-1", "-a", "0"], check=True, capture_output=True)
-        logging.info(f"Disabled port for {vendor_id}:{product_id} on Linux")
+        logging.info(f"[BLOCK] Disabled port for {vendor_id}:{product_id} on Linux")
         return True
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
-        logging.error(f"Linux block error: {e}")
+        logging.error(f"[BLOCK] Linux block error: {e}")
         return False
 
 def get_connected_devices():
     devices = set()
-    logging.debug(f"Scanning USB devices on {system}")
+    logging.debug(f"[DEVICE] Scanning USB devices on {system}")
     known_devices = getattr(get_connected_devices, 'known_devices', set())
 
     if system == "Windows":
@@ -159,11 +143,11 @@ def get_connected_devices():
                     product_id = f"0x{vid_pid[9:13].lower()}"
                     device_id = (vendor_id, product_id)
                     if device_id not in known_devices:
-                        logging.info(f"New device detected: {vendor_id}:{product_id}")
+                        logging.info(f"[DEVICE] New device: {vendor_id}:{product_id}")
                         known_devices.add(device_id)
                     devices.add(device_id)
         except Exception as e:
-            logging.error(f"Windows USB error: {e}")
+            logging.error(f"[DEVICE] Windows USB error: {e}")
 
     elif system == "Darwin":
         try:
@@ -180,14 +164,14 @@ def get_connected_devices():
                     bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
                     device_id = (vendor_id, product_id, bsd_name)
                     if device_id not in known_devices:
-                        logging.info(f"New device detected: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
+                        logging.info(f"[DEVICE] New device: {vendor_id}:{product_id}")
                         known_devices.add(device_id)
                     devices.add(device_id)
                 except Exception as e:
-                    logging.error(f"Error processing USB device: {e}")
+                    logging.error(f"[DEVICE] Error processing USB device: {e}")
                     continue
         except (ImportError, usb.core.NoBackendError) as e:
-            logging.warning(f"pyusb failed: {e}. Falling back to system_profiler")
+            logging.warning(f"[DEVICE] pyusb failed: {e}")
             try:
                 output = subprocess.check_output(["system_profiler", "SPUSBDataType"]).decode()
                 matches = re.findall(r"Vendor ID: 0x(\w+).*?Product ID: 0x(\w+)", output, re.DOTALL)
@@ -197,11 +181,11 @@ def get_connected_devices():
                     bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
                     device_id = (vendor_id, product_id, bsd_name)
                     if device_id not in known_devices:
-                        logging.info(f"New device detected: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
+                        logging.info(f"[DEVICE] New device: {vendor_id}:{product_id}")
                         known_devices.add(device_id)
                     devices.add(device_id)
             except Exception as e:
-                logging.error(f"macOS USB error: {e}")
+                logging.error(f"[DEVICE] macOS USB error: {e}")
 
     elif system == "Linux":
         try:
@@ -213,18 +197,18 @@ def get_connected_devices():
                 if vendor_id and product_id:
                     device_id = (f"0x{vendor_id}", f"0x{product_id}")
                     if device_id not in known_devices:
-                        logging.info(f"New device detected: {vendor_id}:{product_id}")
+                        logging.info(f"[DEVICE] New device: {vendor_id}:{product_id}")
                         known_devices.add(device_id)
                     devices.add(device_id)
         except Exception as e:
-            logging.error(f"Linux USB error: {e}")
+            logging.error(f"[DEVICE] Linux USB error: {e}")
 
     get_connected_devices.known_devices = known_devices
-    logging.debug(f"Found {len(devices)} devices")
+    logging.debug(f"[DEVICE] Found {len(devices)} devices")
     return devices
 
 def monitor_usb():
-    logging.info("Starting USB monitoring")
+    logging.info("[INIT] Starting USB monitoring")
     previous_devices = set()
 
     while not stop_event.is_set():
@@ -238,30 +222,27 @@ def monitor_usb():
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 if is_device_whitelisted(vendor_id, product_id):
                     action = "AUTHORIZED_CONNECTED"
+                    logging.info(f"[DEVICE] Authorized device: {vendor_id}:{product_id}")
                 else:
                     action = "UNAUTHORIZED_CONNECTED"
-                    logging.warning(f"Unauthorized device: {vendor_id}:{product_id}")
+                    logging.warning(f"[ALERT] Unauthorized device: {vendor_id}:{product_id}")
                     if (vendor_id, product_id) not in _already_alerted:
                         bsd_name = extra[0] if extra else None
                         alert_queue.put((vendor_id, product_id, bsd_name))
                         _already_alerted.add((vendor_id, product_id))
-                        if system == "Windows":
-                            block_device_windows(vendor_id, product_id)
-                        elif system == "Darwin" and bsd_name:
-                            block_device_darwin(vendor_id, product_id, bsd_name)
-                        elif system == "Linux":
-                            block_device_linux(vendor_id, product_id)
                 log_event(timestamp, vendor_id, product_id, action)
 
             for vendor_id, product_id, *_ in removed:
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                logging.info(f"[DEVICE] Disconnected: {vendor_id}:{product_id}")
                 log_event(timestamp, vendor_id, product_id, "DISCONNECTED")
                 _already_alerted.discard((vendor_id, product_id))
 
             previous_devices = current_devices
         except Exception as e:
-            logging.error(f"USB monitoring error: {e}")
+            logging.error(f"[MONITOR] Error: {e}")
             time.sleep(5)
 
 def stop_monitoring():
+    logging.info("[INIT] Stopping USB monitoring")
     stop_event.set()
