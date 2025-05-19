@@ -7,7 +7,7 @@ __pycache__/
 *.db
 
 # Logs
-logs/
+logs/events.log
 *.log
 
 # Virtual environments
@@ -21,3 +21,5 @@ venv/
 
 # System files
 .DS_Store
+
+logs/events.log

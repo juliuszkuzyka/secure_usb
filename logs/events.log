@@ -1416,3 +1416,37 @@
 2025-05-19 21:51:46,360 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
 2025-05-19 21:51:47,073 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
 2025-05-19 21:51:48,368 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:47,774 - INFO - Logger initialized successfully
+2025-05-19 21:53:47,774 - INFO - Database initialized successfully
+2025-05-19 21:53:47,906 - INFO - [INIT] Starting USBMonitorApp
+2025-05-19 21:53:47,907 - INFO - [INIT] Setting up UI
+2025-05-19 21:53:47,995 - INFO - [INIT] Alert callback set
+2025-05-19 21:53:47,995 - INFO - [INIT] Starting USB monitoring
+2025-05-19 21:53:48,585 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:48,585 - INFO - [DEVICE] New device: 0x0951:0x172b
+2025-05-19 21:53:49,056 - INFO - [ACTION] Selected: 
+2025-05-19 21:53:49,802 - INFO - [ACTION] Selected: 0x0951:0x172b
+2025-05-19 21:53:50,725 - INFO - Added to whitelist: 0x0951:0x172b
+2025-05-19 21:53:50,725 - INFO - [WHITELIST] Added: 0x0951:0x172b
+2025-05-19 21:53:50,734 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:50,734 - INFO - [DEVICE] Authorized device: 0x0951:0x172b
+2025-05-19 21:53:50,735 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x0951:0x172b
+2025-05-19 21:53:52,492 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:53,516 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:54,233 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:54,829 - INFO - Removed from whitelist: 0x0951:0x172b
+2025-05-19 21:53:54,829 - INFO - [WHITELIST] Removed: 0x0951:0x172b
+2025-05-19 21:53:55,989 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b
+2025-05-19 21:53:56,312 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:56,668 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:58,190 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:53:59,035 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:00,043 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:01,750 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:02,391 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:03,899 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:04,447 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:05,732 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:07,130 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:08,110 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
+2025-05-19 21:54:09,671 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler
