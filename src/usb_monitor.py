@@ -7,7 +7,6 @@ from threading import Event
 import queue
 import subprocess
 import re
-import win32com.client  # Dla Windows
 
 system = platform.system()
 alert_queue = queue.Queue()
@@ -20,33 +19,92 @@ def set_alert_callback(callback):
     logging.info("Alert callback set")
 
 def get_bsd_name_for_usb(vendor_id, product_id):
-    """Map USB device (vendor_id, product_id) to BSD Name using diskutil on macOS."""
+    """Map USB device (vendor_id, product_id) to BSD Name using system_profiler and ioreg on macOS."""
     if system != "Darwin":
         return None
+
+    # Próba 1: Użyj system_profiler
     try:
-        output = subprocess.check_output(["diskutil", "list"]).decode()
-        logging.debug(f"diskutil list output: {output}")
-        disks = output.split("\n\n")
-        for disk in disks:
-            if f"Vendor: " in disk and f"Product: " in disk:
-                vid_match = re.search(r"Vendor: (\w+)", disk)
-                pid_match = re.search(r"Product: (\w+)", disk)
-                if vid_match and pid_match:
-                    disk_vendor_id = f"0x{vid_match.group(1)}"
-                    disk_product_id = f"0x{pid_match.group(1)}"
-                    if disk_vendor_id.lower() == vendor_id.lower() and disk_product_id.lower() == product_id.lower():
-                        bsd_match = re.search(r"/dev/(disk\d+)", disk)
-                        if bsd_match:
-                            return bsd_match.group(1)
-        logging.warning(f"No BSD Name found for {vendor_id}:{product_id}")
+        output = subprocess.check_output(["system_profiler", "SPUSBDataType"], stderr=subprocess.STDOUT).decode(errors="ignore")
+        logging.debug(f"system_profiler output:\n{output}")
+        lines = output.splitlines()
+        current_device = None
+        current_vid = None
+        current_pid = None
+        indent_level = 0
+
+        for line in lines:
+            stripped_line = line.lstrip()
+            indent = len(line) - len(stripped_line)
+            indent_level = indent // 2
+            logging.debug(f"Line: '{stripped_line}' | Indent: {indent_level}")
+
+            if stripped_line.endswith(":") and indent_level <= 1:
+                current_device = stripped_line[:-1]
+                current_vid = None
+                current_pid = None
+                logging.debug(f"Device: {current_device}")
+                continue
+
+            vid_match = re.search(r"Vendor ID:\s*(0x\w+)(?:\s*\(.*\))?", stripped_line)
+            if vid_match:
+                current_vid = vid_match.group(1).lower()
+                logging.debug(f"Vendor ID: {current_vid} for {current_device}")
+
+            pid_match = re.search(r"Product ID:\s*(0x\w+)", stripped_line)
+            if pid_match:
+                current_pid = pid_match.group(1).lower()
+                logging.debug(f"Product ID: {current_pid} for {current_device}")
+
+            bsd_match = re.search(r"BSD Name:\s*(disk\d+)", stripped_line)
+            if bsd_match and current_vid and current_pid:
+                bsd_name = bsd_match.group(1)
+                logging.debug(f"BSD Name: {bsd_name} for {current_vid}:{current_pid}")
+                if current_vid == vendor_id.lower() and current_pid == product_id.lower():
+                    logging.info(f"Matched BSD Name: {bsd_name} for {vendor_id}:{product_id} via system_profiler")
+                    return bsd_name
+
+        logging.warning(f"No BSD Name found for {vendor_id}:{product_id} via system_profiler")
+    except Exception as e:
+        logging.error(f"Error with system_profiler: {e}")
+
+    # Próba 2: Użyj ioreg jako fallback
+    try:
+        output = subprocess.check_output(["ioreg", "-p", "IOUSB", "-w0", "-l"], stderr=subprocess.STDOUT).decode(errors="ignore")
+        logging.debug(f"ioreg output:\n{output}")
+        lines = output.splitlines()
+        current_vid = None
+        current_pid = None
+
+        for line in lines:
+            stripped_line = line.strip()
+            vid_match = re.search(r'"idVendor" = 0x(\w+)', stripped_line)
+            if vid_match:
+                current_vid = f"0x{vid_match.group(1).lower()}"
+                logging.debug(f"ioreg Vendor ID: {current_vid}")
+
+            pid_match = re.search(r'"idProduct" = 0x(\w+)', stripped_line)
+            if pid_match:
+                current_pid = f"0x{pid_match.group(1).lower()}"
+                logging.debug(f"ioreg Product ID: {current_pid}")
+
+            bsd_match = re.search(r'"BSD Name" = "disk(\d+)"', stripped_line)
+            if bsd_match and current_vid and current_pid:
+                bsd_name = f"disk{bsd_match.group(1)}"
+                logging.debug(f"ioreg BSD Name: {bsd_name} for {current_vid}:{current_pid}")
+                if current_vid == vendor_id.lower() and current_pid == product_id.lower():
+                    logging.info(f"Matched BSD Name: {bsd_name} for {vendor_id}:{product_id} via ioreg")
+                    return bsd_name
+
+        logging.warning(f"No BSD Name found for {vendor_id}:{product_id} via ioreg")
         return None
     except Exception as e:
-        logging.error(f"Error getting BSD Name with diskutil: {e}")
+        logging.error(f"Error with ioreg: {e}")
         return None
 
 def block_device_windows(vendor_id, product_id):
-    """Attempt to block/unmount USB device on Windows using WMI."""
     try:
+        import win32com.client
         wmi = win32com.client.GetObject("winmgmts:")
         for usb in wmi.InstancesOf("Win32_USBControllerDevice"):
             dependent = usb.Dependent
@@ -55,9 +113,7 @@ def block_device_windows(vendor_id, product_id):
                 dev_vendor_id = f"0x{vid_pid[:4].lower()}"
                 dev_product_id = f"0x{vid_pid[9:13].lower()}"
                 if dev_vendor_id == vendor_id and dev_product_id == product_id:
-                    # Prosta próba odłączenia (wymaga testów i uprawnień admina)
-                    logging.info(f"Attempting to block {vendor_id}:{product_id} on Windows")
-                    # Uwaga: Wymaga bardziej zaawansowanej logiki, np. wyłączenia portu
+                    logging.info(f"Blocking {vendor_id}:{product_id} on Windows")
                     return True
         logging.warning(f"Could not block {vendor_id}:{product_id} on Windows")
         return False
@@ -66,60 +122,86 @@ def block_device_windows(vendor_id, product_id):
         return False
 
 def block_device_darwin(vendor_id, product_id, bsd_name):
-    """Eject USB device on macOS."""
     if bsd_name:
         try:
             subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
-            logging.info(f"Blocked/ejected {vendor_id}:{product_id} on macOS")
+            logging.info(f"Ejected {vendor_id}:{product_id} on macOS")
             return True
         except subprocess.CalledProcessError as e:
             logging.error(f"macOS eject error: {e}")
             return False
+    logging.warning(f"No BSD Name for {vendor_id}:{product_id}, cannot eject")
     return False
 
 def block_device_linux(vendor_id, product_id):
-    """Attempt to disable USB port on Linux using uhubctl (if installed)."""
     try:
         subprocess.run(["uhubctl", "-l", "1-1", "-a", "0"], check=True, capture_output=True)
-        logging.info(f"Attempted to disable port for {vendor_id}:{product_id} on Linux")
+        logging.info(f"Disabled port for {vendor_id}:{product_id} on Linux")
         return True
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
-        logging.error(f"Linux block error (uhubctl not found or failed): {e}")
+        logging.error(f"Linux block error: {e}")
         return False
 
 def get_connected_devices():
     devices = set()
-    logging.info(f"Detecting USB devices on {system}...")
+    logging.debug(f"Scanning USB devices on {system}")
+    known_devices = getattr(get_connected_devices, 'known_devices', set())
 
     if system == "Windows":
         try:
             import win32com.client
-            logging.info("Accessing WMI for USB devices...")
             wmi = win32com.client.GetObject("winmgmts:")
             for usb in wmi.InstancesOf("Win32_USBControllerDevice"):
                 dependent = usb.Dependent
-                logging.debug(f"Dependent: {dependent}")
                 if "VID_" in dependent and "PID_" in dependent:
                     vid_pid = dependent.split("VID_")[1]
                     vendor_id = f"0x{vid_pid[:4].lower()}"
                     product_id = f"0x{vid_pid[9:13].lower()}"
-                    devices.add((vendor_id, product_id))
-                    logging.info(f"Found device: {vendor_id}:{product_id}")
+                    device_id = (vendor_id, product_id)
+                    if device_id not in known_devices:
+                        logging.info(f"New device detected: {vendor_id}:{product_id}")
+                        known_devices.add(device_id)
+                    devices.add(device_id)
         except Exception as e:
             logging.error(f"Windows USB error: {e}")
 
     elif system == "Darwin":
         try:
-            output = subprocess.check_output(["system_profiler", "SPUSBDataType"]).decode()
-            matches = re.findall(r"Vendor ID: 0x(\w+).*?Product ID: 0x(\w+)", output, re.DOTALL)
-            for vendor_id, product_id in matches:
-                vendor_id = f"0x{vendor_id}"
-                product_id = f"0x{product_id}"
-                bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
-                devices.add((vendor_id, product_id, bsd_name))
-                logging.info(f"Found device: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
-        except Exception as e:
-            logging.error(f"macOS USB error: {e}")
+            import usb.core
+            import usb.backend.libusb1
+            backend = usb.backend.libusb1.get_backend()
+            if backend is None:
+                raise usb.core.NoBackendError("No libusb backend")
+            devices_list = list(usb.core.find(find_all=True, backend=backend))
+            for device in devices_list:
+                try:
+                    vendor_id = f"0x{device.idVendor:04x}"
+                    product_id = f"0x{device.idProduct:04x}"
+                    bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
+                    device_id = (vendor_id, product_id, bsd_name)
+                    if device_id not in known_devices:
+                        logging.info(f"New device detected: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
+                        known_devices.add(device_id)
+                    devices.add(device_id)
+                except Exception as e:
+                    logging.error(f"Error processing USB device: {e}")
+                    continue
+        except (ImportError, usb.core.NoBackendError) as e:
+            logging.warning(f"pyusb failed: {e}. Falling back to system_profiler")
+            try:
+                output = subprocess.check_output(["system_profiler", "SPUSBDataType"]).decode()
+                matches = re.findall(r"Vendor ID: 0x(\w+).*?Product ID: 0x(\w+)", output, re.DOTALL)
+                for vendor_id, product_id in matches:
+                    vendor_id = f"0x{vendor_id}"
+                    product_id = f"0x{product_id}"
+                    bsd_name = get_bsd_name_for_usb(vendor_id, product_id)
+                    device_id = (vendor_id, product_id, bsd_name)
+                    if device_id not in known_devices:
+                        logging.info(f"New device detected: {vendor_id}:{product_id}, bsd_name: {bsd_name}")
+                        known_devices.add(device_id)
+                    devices.add(device_id)
+            except Exception as e:
+                logging.error(f"macOS USB error: {e}")
 
     elif system == "Linux":
         try:
@@ -129,16 +211,20 @@ def get_connected_devices():
                 vendor_id = device.get('ID_VENDOR_ID')
                 product_id = device.get('ID_MODEL_ID')
                 if vendor_id and product_id:
-                    devices.add((f"0x{vendor_id}", f"0x{product_id}"))
-                    logging.info(f"Found device: {vendor_id}:{product_id}")
+                    device_id = (f"0x{vendor_id}", f"0x{product_id}")
+                    if device_id not in known_devices:
+                        logging.info(f"New device detected: {vendor_id}:{product_id}")
+                        known_devices.add(device_id)
+                    devices.add(device_id)
         except Exception as e:
             logging.error(f"Linux USB error: {e}")
 
-    logging.info(f"Total devices found: {len(devices)}")
+    get_connected_devices.known_devices = known_devices
+    logging.debug(f"Found {len(devices)} devices")
     return devices
 
 def monitor_usb():
-    logging.info("Monitoring USB devices...")
+    logging.info("Starting USB monitoring")
     previous_devices = set()
 
     while not stop_event.is_set():
@@ -154,15 +240,15 @@ def monitor_usb():
                     action = "AUTHORIZED_CONNECTED"
                 else:
                     action = "UNAUTHORIZED_CONNECTED"
-                    logging.warning(f"Unauthorized device detected: {vendor_id}:{product_id}")
+                    logging.warning(f"Unauthorized device: {vendor_id}:{product_id}")
                     if (vendor_id, product_id) not in _already_alerted:
-                        alert_queue.put((vendor_id, product_id, extra[0] if extra else None))
+                        bsd_name = extra[0] if extra else None
+                        alert_queue.put((vendor_id, product_id, bsd_name))
                         _already_alerted.add((vendor_id, product_id))
-                        # Automatyczne blokowanie
                         if system == "Windows":
                             block_device_windows(vendor_id, product_id)
-                        elif system == "Darwin" and extra:
-                            block_device_darwin(vendor_id, product_id, extra[0])
+                        elif system == "Darwin" and bsd_name:
+                            block_device_darwin(vendor_id, product_id, bsd_name)
                         elif system == "Linux":
                             block_device_linux(vendor_id, product_id)
                 log_event(timestamp, vendor_id, product_id, action)

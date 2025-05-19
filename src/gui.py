@@ -3,7 +3,7 @@ import logging
 import os
 import sqlite3
 from threading import Thread
-from tkinter import messagebox, END
+from tkinter import messagebox, END, Text
 from datetime import datetime
 import csv
 import json
@@ -75,16 +75,19 @@ class USBMonitorApp(ctk.CTk):
         )
         self.device_label.grid(row=0, column=0, pady=(10, 5), padx=10, sticky="w")
 
-        self.device_textbox = ctk.CTkTextbox(
+        # Używamy tkinter.Text dla obsługi tagów i zaznaczania
+        self.device_textbox = Text(
             self.left_frame,
-            height=200,
+            height=10,
             font=("Segoe UI", 14),
-            fg_color="#2D2D2D",
-            text_color="#D4D4D4",
-            corner_radius=8,
-            wrap="none"
+            bg="#2D2D2D",
+            fg="#D4D4D4",
+            insertbackground="#D4D4D4",
+            wrap="none",
+            cursor="hand2"  # Kursor wskazujący na klikalność
         )
         self.device_textbox.grid(row=1, column=0, padx=10, pady=(0, 10), sticky="nsew")
+        self.device_textbox.bind("<Button-1>", self.on_device_select)  # Podpinamy zdarzenie kliknięcia
 
         # Sekcja whitelist
         self.whitelist_label = ctk.CTkLabel(
@@ -283,21 +286,33 @@ class USBMonitorApp(ctk.CTk):
             line_num = int(float(cursor_pos))
             lines = self.device_textbox.get("1.0", "end").splitlines()
             if 1 <= line_num <= len(lines):
-                self.selected_device = lines[line_num - 1].strip()
+                # Wyodrębnij vendor_id:product_id z linii (np. "✅ 0x0951:0x172b - Authorized")
+                line = lines[line_num - 1].strip()
+                device_id = line.split(" - ")[0].split(" ", 1)[-1]  # Pomija ikonę (✅/❌)
+                self.selected_device = device_id
+                # Podświetl wybraną linię
+                self.device_textbox.tag_remove("selected", "1.0", END)
+                self.device_textbox.tag_add("selected", f"{line_num}.0", f"{line_num}.end")
+                self.device_textbox.tag_configure("selected", background="#4A90E2", foreground="#FFFFFF")
                 self.status_label.configure(text=f"Selected: {self.selected_device}")
                 logging.info(f"Device selected: {self.selected_device}")
             else:
                 self.selected_device = None
+                self.device_textbox.tag_remove("selected", "1.0", END)
                 self.status_label.configure(text="Monitoring USB devices... 🔍")
+                logging.info("No device selected")
         except Exception as e:
             logging.error(f"Error in on_device_select: {e}")
+            self.selected_device = None
+            self.device_textbox.tag_remove("selected", "1.0", END)
+            self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
 
     def remove_from_whitelist(self):
         try:
             if not self.selected_device:
                 messagebox.showwarning("Warning", "Please select a device to remove from whitelist.")
                 return
-            vendor_id, product_id = self.selected_device.split(" - ")[0].split(":")
+            vendor_id, product_id = self.selected_device.split(":")
             if not is_device_whitelisted(vendor_id, product_id):
                 messagebox.showwarning("Warning", f"Device {vendor_id}:{product_id} is not whitelisted.")
                 return
@@ -311,6 +326,7 @@ class USBMonitorApp(ctk.CTk):
     def update_gui(self):
         try:
             logging.info("Updating GUI")
+            # Aktualizacja listy urządzeń
             current_devices = get_connected_devices()
             self.device_textbox.delete("1.0", END)
 
@@ -333,22 +349,33 @@ class USBMonitorApp(ctk.CTk):
                 self.block_button.configure(state="disabled")
                 self.alert_frame.pack_forget()
 
+            # Aktualizacja listy whitelist
             self.whitelist_textbox.delete("1.0", END)
-            conn = sqlite3.connect(DB_FILE)
-            c = conn.cursor()
-            c.execute("SELECT vendor_id, product_id FROM whitelist")
-            for vid, pid in c.fetchall():
-                self.whitelist_textbox.insert(END, f"✔️ {vid}:{pid}\n")
-            conn.close()
+            try:
+                conn = sqlite3.connect(DB_FILE)
+                c = conn.cursor()
+                c.execute("SELECT vendor_id, product_id FROM whitelist")
+                for vid, pid in c.fetchall():
+                    self.whitelist_textbox.insert(END, f"✔️ {vid}:{pid}\n")
+                conn.close()
+            except sqlite3.Error as e:
+                logging.error(f"Error fetching whitelist: {e}")
 
+            # Aktualizacja logów
             self.log_text.delete("1.0", END)
-            if os.path.exists(LOG_FILE):
-                with open(LOG_FILE, "r") as f:
-                    self.log_text.insert(END, f.read())
-                self.log_text.see(END)
+            try:
+                if os.path.exists(LOG_FILE):
+                    with open(LOG_FILE, "r") as f:
+                        self.log_text.insert(END, f.read())
+                    self.log_text.see(END)
+                    logging.info("Logs successfully loaded into GUI")
+                else:
+                    logging.warning(f"Log file {LOG_FILE} does not exist")
+                    self.log_text.insert(END, "Log file not found\n")
+            except Exception as e:
+                logging.error(f"Error loading logs: {e}")
+                self.log_text.insert(END, f"Error loading logs: {e}\n")
 
-            self.progress.set(1)
-            logging.info("GUI update completed")
         except Exception as e:
             logging.error(f"GUI update error: {e}")
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
@@ -366,7 +393,7 @@ class USBMonitorApp(ctk.CTk):
             if not self.selected_device:
                 messagebox.showwarning("Warning", "Please select a device to whitelist.")
                 return
-            vendor_id, product_id = self.selected_device.split(" - ")[0].split(":")
+            vendor_id, product_id = self.selected_device.split(":")
             add_to_whitelist(vendor_id, product_id)
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} added.")
             self.update_gui()
