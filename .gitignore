@@ -21,5 +21,3 @@ venv/
 
 # System files
 .DS_Store
-
-logs/events.log

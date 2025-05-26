@@ -1,0 +1,4520 @@
+[
+    {
+        "entry": "2025-05-19 21:12:23,869 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:12:23,869 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,035 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,036 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,145 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,146 - INFO - Monitoring USB devices..."
+    },
+    {
+        "entry": "2025-05-19 21:12:24,146 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,146 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:24,152 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,253 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,253 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,253 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:24,255 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,146 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:26,147 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,263 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,263 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,263 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,263 - WARNING - Unauthorized device detected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,263 - WARNING - No BSD Name provided for 0x0951:0x172b, cannot eject"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,265 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,319 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:26,320 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:12:28,166 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:28,270 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:28,270 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:28,440 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:28,440 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:28,440 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:29,099 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,331 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,332 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:30,332 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,446 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:30,446 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,514 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,514 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,514 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,519 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,562 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,562 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,562 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,565 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,565 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:30,565 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,684 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,684 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,684 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:30,688 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:32,567 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:32,568 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:32,702 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:32,702 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:32,702 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:32,932 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,515 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,515 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:34,516 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,697 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,697 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,697 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,701 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,707 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:34,707 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,825 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,825 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:34,825 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,519 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,519 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:35,520 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,638 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,638 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,638 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,642 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,694 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,694 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:35,694 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,868 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,868 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,868 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:35,872 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:12:36,829 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:36,829 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:12:36,952 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:12:36,952 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:12:36,952 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:12:38,957 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:12:38,958 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,044 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,044 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,200 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,201 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,306 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,306 - INFO - Monitoring USB devices..."
+    },
+    {
+        "entry": "2025-05-19 21:13:31,307 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,307 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:31,313 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,412 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,412 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,412 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:13:31,414 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,310 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:33,310 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,428 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,428 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,428 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,428 - WARNING - Unauthorized device detected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,428 - WARNING - No BSD Name provided for 0x0951:0x172b, cannot eject"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,430 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,485 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:33,487 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:13:35,430 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:35,430 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:35,550 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:35,550 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:35,550 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,183 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,415 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,415 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:36,416 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,595 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,596 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,596 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:13:36,600 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,384 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,384 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:37,384 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,554 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:13:37,555 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,572 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,572 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,572 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,578 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,670 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,671 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:13:37,671 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,406 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,406 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,556 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,556 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,647 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,647 - INFO - Monitoring USB devices..."
+    },
+    {
+        "entry": "2025-05-19 21:14:23,648 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,648 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:14:23,654 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,739 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,739 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,739 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:14:23,740 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,653 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:14:25,654 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,871 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,871 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,871 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,872 - WARNING - Unauthorized device detected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,872 - WARNING - No BSD Name provided for 0x0951:0x172b, cannot eject"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,873 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,909 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:14:25,909 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,094 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,094 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,243 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,247 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,338 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,338 - INFO - Monitoring USB devices..."
+    },
+    {
+        "entry": "2025-05-19 21:16:50,338 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,338 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:50,344 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,442 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,442 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,442 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:50,444 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,342 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:52,343 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,553 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,553 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,554 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,554 - WARNING - Unauthorized device detected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,554 - WARNING - No BSD Name provided for 0x0951:0x172b, cannot eject"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,555 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,637 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:52,638 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,497 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,497 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:54,498 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,559 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:54,559 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,643 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,643 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,643 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,647 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,718 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,718 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:54,718 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,445 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,446 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:55,447 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,648 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,649 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,649 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:55,653 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:56,722 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:56,722 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:56,837 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:56,837 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:56,837 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:58,842 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:58,844 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:58,982 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:58,982 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:58,982 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,647 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,647 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:16:59,648 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,776 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,776 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,776 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:16:59,780 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,654 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,655 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:00,656 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,858 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,858 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,858 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,862 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:00,986 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:00,986 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:01,087 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:01,088 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:01,088 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,092 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:03,093 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,230 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,230 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:03,230 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,246 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,246 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,246 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,324 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,324 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,324 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:03,328 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,250 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:05,251 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,306 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,306 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:05,307 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,405 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,405 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,405 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,409 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,440 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,440 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,440 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,863 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,863 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:05,864 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,979 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,979 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,979 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:05,983 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:06,035 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:06,667 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,445 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:07,446 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,585 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,586 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,586 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,954 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:07,954 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:07,955 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,102 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,102 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,102 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,106 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,329 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,329 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:08,329 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,448 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,448 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,448 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:08,452 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:09,590 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:09,591 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:09,737 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:09,737 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:09,737 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,410 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,411 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:10,412 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,567 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,567 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,567 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,571 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,984 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:10,984 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:10,985 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,126 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,126 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,126 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,130 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,742 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:11,745 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,886 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,886 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:11,886 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,106 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,107 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:13,107 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,206 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,206 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,206 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,210 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,452 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,453 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:13,453 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,641 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,641 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,641 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,646 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:13,888 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:13,889 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:14,022 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:14,023 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:14,023 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,572 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,572 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:15,572 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,731 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,731 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,731 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:15,736 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,027 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:16,028 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,131 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,131 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:16,131 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,147 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,147 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,147 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,228 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,228 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,228 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:16,233 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,152 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:18,152 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,211 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,211 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:18,211 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,255 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,256 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,256 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,301 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,301 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,301 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,305 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,589 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,589 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:18,589 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,703 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,703 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,703 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,707 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,721 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,721 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:18,722 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,818 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,818 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,818 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:18,822 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,260 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:20,261 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,406 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,406 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,406 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,745 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,745 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:20,745 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,915 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,915 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,915 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:20,920 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,236 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,237 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:21,237 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,324 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,324 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,324 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:21,329 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:22,411 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:22,413 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:22,551 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:22,551 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:22,551 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,306 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,306 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:23,307 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,445 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,445 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,445 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,449 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,707 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,707 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:23,707 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,864 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,864 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,864 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,869 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,884 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,884 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:23,884 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,981 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,981 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,981 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:23,985 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:24,261 - INFO - Device already in whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:24,556 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:24,557 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:24,691 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:24,691 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:24,691 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,597 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,597 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:25,598 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,737 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,737 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,737 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,741 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,920 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:25,920 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:25,921 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,014 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,014 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,014 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,018 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,329 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,329 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:26,330 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,462 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,462 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,462 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,466 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,696 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:26,696 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,809 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,809 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:26,809 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,451 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,452 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:28,453 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,666 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,666 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,666 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,671 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,814 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:28,815 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,869 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,869 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:28,869 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,920 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,921 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,921 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,980 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,981 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,981 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:28,985 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:29,002 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,621 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,621 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:30,622 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,829 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,829 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,829 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,834 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,834 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,834 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:30,834 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,926 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:30,926 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,941 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,941 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,941 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,946 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,947 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:30,947 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:30,947 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,040 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,041 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,041 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,044 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,063 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,064 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:31,064 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,082 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,082 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,082 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,166 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,166 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,166 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,170 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,467 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,468 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:31,469 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,602 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,602 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,602 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:31,606 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,085 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:33,087 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,229 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,229 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,229 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,672 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,672 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:33,673 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,817 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,817 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,817 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,821 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,986 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:33,986 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:33,986 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:34,092 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:34,092 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:34,092 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:34,096 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,235 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:35,238 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,382 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,382 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,382 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,835 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,836 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:35,837 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,951 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,951 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,951 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,956 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,971 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:35,972 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:35,972 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,068 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,069 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,069 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,073 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,087 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,087 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:36,087 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,186 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,186 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,186 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,190 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,205 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,205 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:36,205 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,301 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,301 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,302 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,306 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,607 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,607 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:36,608 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,754 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,754 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,754 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:36,758 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:37,387 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:37,387 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:37,517 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:37,517 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:37,517 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,835 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,836 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:38,836 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,932 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,932 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,932 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:38,936 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,088 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,088 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:39,088 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,189 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,189 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,189 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,193 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,208 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,208 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:39,209 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,367 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,367 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,367 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,372 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,522 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:39,523 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,707 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,707 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:39,707 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:40,957 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:40,958 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:40,959 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,182 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,182 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,182 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,187 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,202 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,202 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:41,202 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,290 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,290 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,290 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,294 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,294 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,294 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:41,294 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,389 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,390 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,390 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,394 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,410 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,410 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:41,410 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,507 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,507 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,507 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,511 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,712 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:41,712 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,759 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,760 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:41,760 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,857 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,857 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,857 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,861 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,892 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,892 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:41,892 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:43,898 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:43,899 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:43,950 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:43,951 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:43,952 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,033 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,033 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,033 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,110 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,110 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,110 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,115 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,203 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,203 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:44,203 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,359 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,359 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,359 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,364 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,380 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,381 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:44,381 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,478 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,478 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,478 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:44,482 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,038 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:46,040 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,173 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,173 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,173 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,188 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,188 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:46,188 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,280 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,280 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,280 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,284 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,299 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,299 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:46,299 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,384 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,384 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,384 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,388 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,404 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,404 - INFO - Detecting USB devices on Darwin..."
+    },
+    {
+        "entry": "2025-05-19 21:17:46,404 - INFO - Found 1 USB devices with pyusb"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,498 - WARNING - No BSD Name found for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,499 - INFO - Added device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,499 - INFO - Total devices found: 1"
+    },
+    {
+        "entry": "2025-05-19 21:17:46,503 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:16,887 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:21:16,888 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,052 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,053 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,155 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,156 - INFO - Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,156 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,322 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,349 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,349 - INFO - New device detected: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:21:17,351 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,212 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,270 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,305 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,306 - WARNING - Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,307 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,315 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:21:19,315 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:21:21,485 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:21,518 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:22,351 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:22,520 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:22,553 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:22,558 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:23,706 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:23,746 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:25,872 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:25,910 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:26,063 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,152 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,267 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,305 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,310 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,558 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,733 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,771 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:27,776 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:28,093 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:28,132 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:30,319 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:30,358 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,324 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,467 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,501 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,520 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,540 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,544 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,777 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,951 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,991 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:32,995 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:34,709 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:34,747 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:36,853 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:36,891 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,463 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,579 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,618 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,623 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,641 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,745 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,784 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,788 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:37,996 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:38,176 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:38,216 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:38,220 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:39,000 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:39,040 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:41,227 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:41,265 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,624 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,725 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,764 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,768 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,789 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:42,981 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,019 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,024 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,221 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,410 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,450 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,450 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,473 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:43,488 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:44,861 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:21:45,612 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:45,651 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:46,013 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:46,186 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:46,225 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:46,230 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,321 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,768 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,829 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,866 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,882 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,922 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:47,926 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:48,027 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:21:48,141 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:21:48,179 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:21:48,183 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,463 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,464 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,607 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,608 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,703 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,703 - INFO - Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,703 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,808 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,829 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,830 - INFO - New device detected: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:22:22,831 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,190 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,360 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,394 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,399 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,736 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,837 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,875 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,879 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,893 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,931 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,931 - WARNING - Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:22:24,932 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:22:25,014 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:22:25,015 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:22:27,112 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:27,152 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:27,835 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:28,014 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:28,053 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:28,058 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,276 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,314 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,399 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,573 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,611 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,615 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:29,880 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:30,059 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:30,098 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:30,102 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:31,489 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:31,528 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,058 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,234 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,272 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,277 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,645 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:33,685 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:34,616 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:34,800 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:34,838 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:34,843 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,104 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,275 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,314 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,319 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,866 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:35,904 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,081 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,121 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,278 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,379 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,419 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:38,424 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:39,843 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,035 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,075 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,080 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,239 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,278 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,320 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,495 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,534 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:40,538 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:42,397 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:42,435 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:43,425 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:43,567 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:43,606 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:43,611 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:44,559 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:44,598 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,082 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,193 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,236 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,240 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,539 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,654 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,693 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:45,697 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:46,725 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:46,764 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,623 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,800 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,838 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,842 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,943 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:48,980 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,242 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,347 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,383 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,387 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,699 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,830 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,867 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,871 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:50,891 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:22:51,080 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:51,115 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:51,700 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:22:52,783 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:52,882 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:52,920 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:52,925 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:53,237 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:53,277 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:53,843 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:54,029 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:54,062 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:54,067 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,387 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,422 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,460 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,558 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,596 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,600 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,874 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:55,974 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:56,010 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:56,014 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:57,610 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:57,646 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:57,927 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:58,064 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:58,103 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:58,108 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,068 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,222 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,260 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,264 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,849 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:22:59,890 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:00,602 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:00,797 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:00,834 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:00,838 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:01,015 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:01,121 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:01,157 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:01,161 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:02,097 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:02,137 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:02,223 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,633 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,766 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,802 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,807 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,824 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,926 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,963 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:03,967 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,243 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,265 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,283 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,420 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,457 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:04,461 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:05,001 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:23:05,839 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:05,977 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:06,013 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:06,017 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,065 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,066 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,235 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,236 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,332 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,332 - INFO - Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,332 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,440 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,463 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,463 - INFO - New device detected: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:23:34,464 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:23:35,210 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,535 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,568 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,569 - WARNING - Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,570 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,571 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:23:36,571 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,246 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,247 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,424 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,424 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,520 - INFO - [CALLBACK] Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,521 - INFO - [MONITOR] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,521 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:34,981 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:35,074 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:35,074 - INFO - [DEVICE] New device: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:27:35,076 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:36,978 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:37,148 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:37,148 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:27:37,149 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:27:37,169 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:27:37,170 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:27:39,290 - INFO - Device selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:27:39,658 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:39,846 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:40,077 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:40,532 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:40,642 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:40,647 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:40,665 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:27:41,868 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:42,381 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:42,393 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:42,492 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:42,502 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:42,507 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:43,664 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:27:44,864 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:44,957 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:45,128 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:45,303 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:45,445 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:45,450 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:45,647 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:46,111 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:46,283 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:46,288 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:47,514 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:47,678 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:47,873 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:48,004 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:48,178 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:48,183 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:50,354 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:50,451 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:50,482 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:50,980 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,095 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,100 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,288 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,760 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,864 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:51,869 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:52,968 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:53,147 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:53,184 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:53,704 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:53,817 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:53,822 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:55,702 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:55,824 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:56,101 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:56,594 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:56,711 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:56,715 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:56,870 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:57,360 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:57,473 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:57,478 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:58,296 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:58,474 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:58,824 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:27:59,337 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:27:59,494 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:27:59,499 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:00,947 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:01,051 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:01,717 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:02,217 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:02,392 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:02,397 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:02,478 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:02,961 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:03,077 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:03,082 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:03,596 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:03,772 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:04,500 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:04,978 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:05,090 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:05,095 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:06,238 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:06,404 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:07,399 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:07,884 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,002 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,007 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,082 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,568 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,684 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,706 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:08,901 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:09,063 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:10,096 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:10,558 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:10,673 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:10,678 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:11,527 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:11,623 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:13,008 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:13,523 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:13,645 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:13,652 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:13,715 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:14,237 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:14,316 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:14,348 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:14,426 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:14,431 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:15,680 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:16,169 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:16,265 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:16,270 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:16,794 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:16,891 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:18,652 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,162 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,276 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,281 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,387 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,432 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,502 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,867 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,978 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:19,983 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:21,271 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:21,809 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:21,984 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:21,986 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:22,004 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:22,098 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,281 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,639 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,739 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,798 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,837 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,841 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:24,984 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:25,397 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:25,482 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:25,487 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,020 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,337 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,451 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,527 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,692 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:27,698 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:29,848 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:29,945 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,124 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,300 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,395 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,400 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,488 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:30,926 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:31,018 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:31,023 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:32,616 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:32,698 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:32,718 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:33,111 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:33,210 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:33,215 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,167 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,259 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,401 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,883 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,984 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:35,989 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:36,023 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:36,436 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:36,533 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:36,538 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:37,723 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:37,836 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:38,216 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:38,673 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:38,775 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:38,780 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:40,296 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:40,401 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:40,991 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:41,487 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:41,591 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:41,596 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:41,612 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:42,068 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:42,179 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:42,185 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:42,824 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:42,977 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:43,781 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:44,227 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:44,321 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:44,326 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:45,457 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:45,550 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:46,597 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,075 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,242 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,248 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,264 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,756 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,851 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,856 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:47,991 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:48,159 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:49,327 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:49,835 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:49,935 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:28:49,940 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:28:50,473 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:28:50,584 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via diskutil"
+    },
+    {
+        "entry": "2025-05-19 21:28:50,670 - WARNING - [BSD] No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,685 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,685 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,852 - INFO - Initializing USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,853 - INFO - Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,958 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,958 - INFO - Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:29:04,958 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:29:05,066 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:05,089 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:05,090 - INFO - New device detected: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:29:05,091 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:29:05,759 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,171 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,208 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,208 - WARNING - Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,209 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,230 - INFO - Alert triggered for 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:29:07,230 - WARNING - No BSD Name available, eject disabled"
+    },
+    {
+        "entry": "2025-05-19 21:29:09,352 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:09,389 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:10,091 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:29:10,224 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:10,259 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:10,263 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:29:11,542 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:11,577 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:13,683 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:13,719 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:14,967 - INFO - Device selected:"
+    },
+    {
+        "entry": "2025-05-19 21:29:15,264 - INFO - Updating GUI"
+    },
+    {
+        "entry": "2025-05-19 21:29:15,402 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:29:15,437 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:29:15,441 - INFO - Logs successfully loaded into GUI"
+    },
+    {
+        "entry": "2025-05-19 21:33:54,730 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:33:54,731 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:33:54,900 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:33:54,900 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:33:55,003 - INFO - Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:33:55,003 - INFO - Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:33:55,195 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:33:55,226 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:33:55,226 - INFO - New device detected: 0x0951:0x172b, bsd_name: None"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,184 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,220 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,220 - WARNING - Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,222 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,299 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:33:57,299 - WARNING - [BLOCK] Cannot eject 0x0951:0x172b: No BSD Name"
+    },
+    {
+        "entry": "2025-05-19 21:33:59,387 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:33:59,420 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:00,409 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:00,444 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:01,535 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:01,568 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:03,744 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:03,790 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:05,632 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:05,670 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:05,983 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:06,022 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:08,195 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:08,233 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:10,345 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:10,383 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:10,859 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:10,899 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:10,988 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:34:11,748 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:34:11,748 - INFO - [WHITELIST] Added: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:34:12,506 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:12,551 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:13,619 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:13,657 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:14,674 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:14,715 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:16,069 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:16,109 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:16,901 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:16,941 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:18,782 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:18,821 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:18,967 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:34:18,967 - INFO - [WHITELIST] Removed: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:34:19,124 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:19,164 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:34:20,112 - WARNING - No BSD Name found for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:34:20,149 - WARNING - No BSD Name found for 0x0951:0x172b via ioreg"
+    },
+    {
+        "entry": "2025-05-19 21:43:23,864 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:43:23,866 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:43:24,039 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:43:24,040 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:43:24,143 - INFO - [INIT] Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:43:24,143 - INFO - [INIT] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,285 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,302 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,303 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,304 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,352 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:31,352 - WARNING - [BLOCK] Cannot eject 0x0951:0x172b: No BSD Name"
+    },
+    {
+        "entry": "2025-05-19 21:43:38,095 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:43:38,848 - WARNING - [BLOCK] Cannot eject 0x0951:0x172b: No BSD Name"
+    },
+    {
+        "entry": "2025-05-19 21:44:15,629 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:44:16,291 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:16,991 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:18,235 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:18,235 - INFO - [WHITELIST] Added: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:33,219 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:33,219 - INFO - [WHITELIST] Removed: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:46,751 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:44:49,030 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:51,163 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:44:53,429 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:44:55,470 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:56,124 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:44:58,108 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:45:11,451 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:45:17,051 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:45:20,821 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:45:25,913 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:45:25,913 - INFO - [WHITELIST] Added: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,048 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,048 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,224 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,225 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,335 - INFO - [INIT] Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:46:45,335 - INFO - [INIT] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:46:46,058 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:46,058 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:47,818 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:46:48,186 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:48,187 - INFO - [DEVICE] Authorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:48,189 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:49,115 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:50,068 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:50,068 - INFO - [WHITELIST] Removed: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:50,961 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:51,898 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:52,812 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:53,347 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:46:53,834 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:53,889 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:46:56,580 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:46:56,664 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:58,684 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:59,515 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:46:59,593 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:02,303 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:04,485 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:05,138 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:05,399 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:07,935 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:10,306 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:10,808 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:11,253 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:11,277 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:47:11,577 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:47:13,101 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-19 21:47:13,702 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:16,504 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:16,856 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:47:16,887 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:47:17,632 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,367 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,369 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,554 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,555 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,660 - INFO - [INIT] Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:50:42,660 - INFO - [INIT] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:50:43,416 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:43,416 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:45,379 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:45,380 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:45,382 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:45,395 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:47,817 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:48,092 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:49,231 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:50,901 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:50:51,229 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:52,999 - INFO - [BLOCK] Ejected 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:53,799 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:53,800 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:53,801 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:53,801 - INFO - [DEVICE] Disconnected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:50:53,802 - INFO - Logged event: DISCONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:22,230 - INFO - [DEVICE] Disconnected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:22,237 - INFO - Logged event: DISCONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:29,301 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:29,302 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:29,303 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:29,321 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:29,341 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:51:30,001 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:31,982 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:34,730 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:35,027 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:35,750 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:37,423 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:40,146 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:40,691 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:41,402 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:42,785 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:45,539 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:46,360 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:47,073 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:51:48,368 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,774 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,774 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,906 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,907 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,995 - INFO - [INIT] Alert callback set"
+    },
+    {
+        "entry": "2025-05-19 21:53:47,995 - INFO - [INIT] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-19 21:53:48,585 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:48,585 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:49,056 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-19 21:53:49,802 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:50,725 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:50,725 - INFO - [WHITELIST] Added: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:50,734 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:50,734 - INFO - [DEVICE] Authorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:50,735 - INFO - Logged event: AUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:52,492 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:53,516 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:54,233 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:54,829 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:54,829 - INFO - [WHITELIST] Removed: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:55,989 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-19 21:53:56,312 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:56,668 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:58,190 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:53:59,035 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:00,043 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:01,750 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:02,391 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:03,899 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:04,447 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:05,732 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:07,130 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:08,110 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-19 21:54:09,671 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:03:40,620 - INFO - Logger initialized successfully"
+    },
+    {
+        "entry": "2025-05-26 17:03:40,621 - INFO - Database initialized successfully"
+    },
+    {
+        "entry": "2025-05-26 17:03:40,787 - INFO - [INIT] Starting USBMonitorApp"
+    },
+    {
+        "entry": "2025-05-26 17:03:40,788 - INFO - [INIT] Setting up UI"
+    },
+    {
+        "entry": "2025-05-26 17:03:41,076 - INFO - [INIT] Alert callback set"
+    },
+    {
+        "entry": "2025-05-26 17:03:41,077 - INFO - [INIT] Starting USB monitoring"
+    },
+    {
+        "entry": "2025-05-26 17:03:43,432 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-26 17:04:40,374 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:40,374 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:40,375 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:40,376 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:40,457 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:41,907 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:42,979 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-26 17:04:43,085 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:44,682 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:45,762 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-26 17:04:45,850 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:46,358 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:47,610 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:48,539 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:48,590 - INFO - [ACTION] Selected:"
+    },
+    {
+        "entry": "2025-05-26 17:04:49,126 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:50,242 - INFO - Added to whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:50,243 - INFO - [WHITELIST] Added: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:04:51,175 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:52,497 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:53,283 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:53,822 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:55,147 - INFO - [ACTION] No unauthorized device to eject"
+    },
+    {
+        "entry": "2025-05-26 17:04:56,514 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:04:59,196 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:00,117 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:00,754 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:01,884 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:03,854 - INFO - Removed from whitelist: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:03,854 - INFO - [WHITELIST] Removed: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:04,576 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:05,439 - INFO - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:06,117 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:06,844 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:07,263 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:07,511 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:09,964 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:10,891 - INFO - [ACTION] Selected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:11,817 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:12,605 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:12,693 - INFO - [BSD] Found BSD Name: disk6 for 0x0951:0x172b via system_profiler"
+    },
+    {
+        "entry": "2025-05-26 17:05:13,573 - INFO - [BLOCK] Ejected 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:15,280 - INFO - [DEVICE] New device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:15,280 - WARNING - [ALERT] Unauthorized device: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:15,281 - INFO - Logged event: UNAUTHORIZED_CONNECTED for 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:15,282 - INFO - [DEVICE] Disconnected: 0x0951:0x172b"
+    },
+    {
+        "entry": "2025-05-26 17:05:15,282 - INFO - Logged event: DISCONNECTED for 0x0951:0x172b"
+    }
+]
