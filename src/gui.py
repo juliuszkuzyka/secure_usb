@@ -1,3 +1,5 @@
+# src/gui.py
+
 import customtkinter as ctk
 import logging
 import os
@@ -13,6 +15,7 @@ from queue import Queue
 
 from .usb_monitor import get_connected_devices, monitor_usb, set_alert_callback, alert_queue
 from .database import is_device_whitelisted, add_to_whitelist, remove_from_whitelist
+from .scanner import scan_device, get_mount_point  # <-- NOWY IMPORT
 from config import LOG_FILE, DB_FILE
 
 log = logging.getLogger('secure_usb.gui')
@@ -185,6 +188,21 @@ class USBMonitorApp(ctk.CTk):
             width=200
         )
         self.remove_button.pack(side="left", padx=5)
+
+        # <-- NOWY PRZYCISK "SCAN" -->
+        self.scan_button = ctk.CTkButton(
+            self.buttons_frame,
+            text="Scan 🔍",
+            command=self.scan_selected_device,
+            fg_color="#F39C12",
+            hover_color="#D35400",
+            font=("Segoe UI", 14),
+            corner_radius=8,
+            width=200
+        )
+        self.scan_button.pack(side="left", padx=5)
+        # <-- KONIEC NOWEGO PRZYCISKU -->
+
         self.refresh_button = ctk.CTkButton(
             self.buttons_frame,
             text="Refresh 🔄",
@@ -251,7 +269,7 @@ class USBMonitorApp(ctk.CTk):
         """Redraws the device list based on the current self.devices set."""
         self.device_textbox.delete("1.0", END)
         unauthorized_detected = False
-        
+
         # Sortuj urządzenia dla spójnej kolejności
         sorted_devices = sorted(list(self.devices))
 
@@ -265,7 +283,7 @@ class USBMonitorApp(ctk.CTk):
             self.device_textbox.tag_configure("Unauthorized", foreground="#E74C3C")
             if status == "Unauthorized":
                 unauthorized_detected = True
-        
+
         self.progress.set(1.0) # Zawsze pokazuj pełny pasek po odświeżeniu
 
         # Ukryj alert, jeśli nie ma już nieautoryzowanych urządzeń
@@ -283,8 +301,7 @@ class USBMonitorApp(ctk.CTk):
                         subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True, capture_output=True)
                         log.info(f"Successfully ejected {vendor_id}:{product_id}")
                         messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} ejected.")
-                        
-                        # --- ZMIANA: Natychmiastowe usunięcie z listy i odświeżenie ---
+
                         device_to_remove = None
                         for device in self.devices:
                             if device[0] == vendor_id and device[1] == product_id:
@@ -292,11 +309,10 @@ class USBMonitorApp(ctk.CTk):
                                 break
                         if device_to_remove:
                             self.devices.remove(device_to_remove)
-                        
+
                         self.unauthorized_device = None
                         self.alert_frame.pack_forget()
                         self.redraw_device_list() # Odśwież widok
-                        # --- KONIEC ZMIANY ---
 
                     except subprocess.CalledProcessError as e:
                         error_message = e.stderr.decode('utf-8', errors='ignore')
@@ -362,7 +378,6 @@ class USBMonitorApp(ctk.CTk):
             self.devices = get_connected_devices()
             self.redraw_device_list()
 
-            # Aktualizacja pozostałych części GUI
             self.whitelist_textbox.delete("1.0", END)
             try:
                 conn = sqlite3.connect(DB_FILE)
@@ -392,7 +407,6 @@ class USBMonitorApp(ctk.CTk):
             log.error(f"GUI update error: {e}", exc_info=True)
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
 
-        # Ustawienie kolejnego odświeżenia
         self.after(5000, self.update_gui)
 
     def check_alert_queue(self):
@@ -447,6 +461,63 @@ class USBMonitorApp(ctk.CTk):
         except Exception as e:
             log.error(f"JSON export error: {e}")
             messagebox.showerror("Error", str(e))
+
+    # <-- NOWE METODY DO SKANOWANIA -->
+    def scan_selected_device(self):
+        if not self.selected_device:
+            messagebox.showwarning("Warning", "Please select a device to scan.")
+            return
+
+        vendor_id, product_id = self.selected_device.split(":")
+        bsd_name = None
+
+        for dev in self.devices:
+            if dev[0] == vendor_id and dev[1] == product_id:
+                bsd_name = dev[2]
+                break
+
+        if not bsd_name:
+            messagebox.showerror("Error", "Cannot identify the path for this device (missing BSD Name). Scan is only available on macOS for now.")
+            return
+
+        mount_point = get_mount_point(bsd_name)
+        if not mount_point:
+            messagebox.showerror("Error", "Could not locate the device's mount point. Scanning is not possible.")
+            return
+
+        self.status_label.configure(text=f"Scanning {mount_point}...")
+        self.progress.configure(mode="indeterminate")
+        self.progress.start()
+
+        scan_thread = Thread(target=self.run_scan, args=(mount_point,), daemon=True)
+        scan_thread.start()
+
+    def run_scan(self, mount_point):
+        suspicious_files = scan_device(mount_point)
+        self.after(0, self.show_scan_results, suspicious_files)
+
+    def show_scan_results(self, suspicious_files):
+        self.progress.stop()
+        self.progress.configure(mode="determinate")
+        self.progress.set(1.0)
+        self.status_label.configure(text="Scan complete.")
+
+        if not suspicious_files:
+            messagebox.showinfo("Scan Results", "No suspicious files were found.")
+        else:
+            results_window = ctk.CTkToplevel(self)
+            results_window.title("Scan Results")
+            results_window.geometry("800x600")
+
+            label = ctk.CTkLabel(results_window, text="Suspicious files found:", font=("Segoe UI", 16, "bold"))
+            label.pack(pady=10)
+
+            textbox = ctk.CTkTextbox(results_window, width=780, height=550)
+            textbox.pack(padx=10, pady=10)
+
+            for file in suspicious_files:
+                textbox.insert(END, file + "\n")
+    # <-- KONIEC NOWYCH METOD -->
 
 if __name__ == "__main__":
     app = USBMonitorApp()
