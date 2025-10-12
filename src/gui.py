@@ -15,16 +15,12 @@ from .usb_monitor import get_connected_devices, monitor_usb, set_alert_callback,
 from .database import is_device_whitelisted, add_to_whitelist, remove_from_whitelist
 from config import LOG_FILE, DB_FILE
 
+log = logging.getLogger('secure_usb.gui')
+
 class USBMonitorApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        logging.basicConfig(
-            filename="logs/events.log",
-            level=logging.INFO,
-            filemode='w',
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
-        logging.info("[INIT] Starting USBMonitorApp")
+        log.info("Starting USBMonitorApp")
         self.title("USB Security Monitor")
         self.geometry("1400x900")
         self.configure(fg_color="#0D1B2A")
@@ -42,7 +38,8 @@ class USBMonitorApp(ctk.CTk):
         self.update_gui()
 
     def setup_ui(self):
-        logging.info("[INIT] Setting up UI")
+        log.info("Setting up UI")
+        # Ta funkcja pozostaje bez zmian
         self.main_frame = ctk.CTkFrame(self, fg_color="#0D1B2A", corner_radius=0)
         self.main_frame.pack(fill="both", expand=True, padx=15, pady=15)
 
@@ -246,9 +243,36 @@ class USBMonitorApp(ctk.CTk):
         self.alert_label.configure(text=f"⚠️ Unauthorized Device: {vendor_id}:{product_id}")
         self.alert_frame.pack(pady=5)
         self.alert_frame.lift()
-        logging.info(f"[ALERT] Unauthorized device: {vendor_id}:{product_id}")
+        log.warning(f"GUI ALERT: Unauthorized device {vendor_id}:{product_id}")
         if not bsd_name:
-            logging.warning(f"[BLOCK] Cannot eject {vendor_id}:{product_id}: No BSD Name")
+            log.warning(f"Cannot eject {vendor_id}:{product_id}: No BSD Name available.")
+
+    def redraw_device_list(self):
+        """Redraws the device list based on the current self.devices set."""
+        self.device_textbox.delete("1.0", END)
+        unauthorized_detected = False
+        
+        # Sortuj urządzenia dla spójnej kolejności
+        sorted_devices = sorted(list(self.devices))
+
+        for i, (vendor_id, product_id, *_) in enumerate(sorted_devices):
+            status = "Authorized" if is_device_whitelisted(vendor_id, product_id) else "Unauthorized"
+            icon = "✅ " if status == "Authorized" else "❌ "
+            entry = f"{icon}{vendor_id}:{product_id} - {status}\n"
+            self.device_textbox.insert(END, entry)
+            self.device_textbox.tag_add(status, f"{i+1}.0", f"{i+1}.end")
+            self.device_textbox.tag_configure("Authorized", foreground="#2ECC71")
+            self.device_textbox.tag_configure("Unauthorized", foreground="#E74C3C")
+            if status == "Unauthorized":
+                unauthorized_detected = True
+        
+        self.progress.set(1.0) # Zawsze pokazuj pełny pasek po odświeżeniu
+
+        # Ukryj alert, jeśli nie ma już nieautoryzowanych urządzeń
+        if not unauthorized_detected and self.unauthorized_device:
+            self.unauthorized_device = None
+            self.alert_frame.pack_forget()
+
 
     def eject_device(self):
         if self.unauthorized_device:
@@ -256,23 +280,36 @@ class USBMonitorApp(ctk.CTk):
             if platform.system() == "Darwin":
                 if bsd_name:
                     try:
-                        subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True)
-                        logging.info(f"[BLOCK] Ejected {vendor_id}:{product_id}")
+                        subprocess.run(["diskutil", "eject", f"/dev/{bsd_name}"], check=True, capture_output=True)
+                        log.info(f"Successfully ejected {vendor_id}:{product_id}")
                         messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} ejected.")
+                        
+                        # --- ZMIANA: Natychmiastowe usunięcie z listy i odświeżenie ---
+                        device_to_remove = None
+                        for device in self.devices:
+                            if device[0] == vendor_id and device[1] == product_id:
+                                device_to_remove = device
+                                break
+                        if device_to_remove:
+                            self.devices.remove(device_to_remove)
+                        
                         self.unauthorized_device = None
                         self.alert_frame.pack_forget()
+                        self.redraw_device_list() # Odśwież widok
+                        # --- KONIEC ZMIANY ---
+
                     except subprocess.CalledProcessError as e:
-                        logging.error(f"[BLOCK] Eject failed for {vendor_id}:{product_id}: {e}")
-                        messagebox.showerror("Error", f"Failed to eject device: {e}. Requires admin privileges.")
+                        error_message = e.stderr.decode('utf-8', errors='ignore')
+                        log.error(f"Eject failed for {vendor_id}:{product_id}: {error_message}")
+                        messagebox.showerror("Error", f"Failed to eject device: {error_message}. Requires admin privileges.")
                 else:
-                    logging.warning(f"[BLOCK] Cannot eject {vendor_id}:{product_id}: No BSD Name")
+                    log.warning(f"Cannot eject {vendor_id}:{product_id}: No BSD Name")
                     messagebox.showwarning("Warning", "Cannot eject: Device not identified (no BSD Name).")
             else:
-                logging.warning(f"[BLOCK] Eject not supported for {vendor_id}:{product_id}")
+                log.warning(f"Eject action not supported on this OS for {vendor_id}:{product_id}")
                 messagebox.showwarning("Warning", "Eject not supported on this system.")
-            self.update_gui()
         else:
-            logging.info("[ACTION] No unauthorized device to eject")
+            log.info("No unauthorized device to eject.")
             messagebox.showinfo("Info", "No unauthorized device to eject.")
 
     def on_device_select(self, event):
@@ -280,22 +317,22 @@ class USBMonitorApp(ctk.CTk):
             cursor_pos = self.device_textbox.index("current")
             line_num = int(float(cursor_pos))
             lines = self.device_textbox.get("1.0", "end").splitlines()
-            if 1 <= line_num <= len(lines):
+            if 1 <= line_num <= len(lines) and lines[line_num - 1].strip():
                 line = lines[line_num - 1].strip()
-                device_id = line.split(" - ")[0].split(" ", 1)[-1]
-                self.selected_device = device_id
+                device_id_part = line.split(" - ")[0]
+                self.selected_device = device_id_part.split(" ", 1)[-1]
                 self.device_textbox.tag_remove("selected", "1.0", END)
                 self.device_textbox.tag_add("selected", f"{line_num}.0", f"{line_num}.end")
                 self.device_textbox.tag_configure("selected", background="#4A90E2", foreground="#FFFFFF")
                 self.status_label.configure(text=f"Selected: {self.selected_device}")
-                logging.info(f"[ACTION] Selected: {self.selected_device}")
+                log.info(f"Selected device: {self.selected_device}")
             else:
                 self.selected_device = None
                 self.device_textbox.tag_remove("selected", "1.0", END)
                 self.status_label.configure(text="Monitoring USB devices... 🔍")
-                logging.info("[ACTION] Selection cleared")
+                log.info("Selection cleared")
         except Exception as e:
-            logging.error(f"[ACTION] Selection error: {e}")
+            log.error(f"Device selection error: {e}")
             self.selected_device = None
             self.device_textbox.tag_remove("selected", "1.0", END)
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
@@ -310,42 +347,22 @@ class USBMonitorApp(ctk.CTk):
                 messagebox.showwarning("Warning", f"Device {vendor_id}:{product_id} is not whitelisted.")
                 return
             remove_from_whitelist(vendor_id, product_id)
-            logging.info(f"[WHITELIST] Removed: {vendor_id}:{product_id}")
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} removed from whitelist.")
-            # Sprawdź, czy urządzenie jest podłączone i nieautoryzowane
             for dev_vendor_id, dev_product_id, bsd_name in self.devices:
-                if dev_vendor_id == vendor_id and dev_product_id == product_id:
-                    if not is_device_whitelisted(vendor_id, product_id):
-                        self.alert_unauthorized(vendor_id, product_id, bsd_name)
-                        break
+                if dev_vendor_id == vendor_id and dev_product_id == product_id and not is_device_whitelisted(vendor_id, product_id):
+                    self.alert_unauthorized(vendor_id, product_id, bsd_name)
+                    break
             self.update_gui()
         except Exception as e:
-            logging.error(f"[WHITELIST] Remove error: {e}")
+            log.error(f"Remove from whitelist error: {e}")
             messagebox.showerror("Error", str(e))
 
     def update_gui(self):
         try:
-            current_devices = get_connected_devices()
-            self.device_textbox.delete("1.0", END)
+            self.devices = get_connected_devices()
+            self.redraw_device_list()
 
-            unauthorized_detected = False
-            self.devices = current_devices
-            for i, (vendor_id, product_id, *_) in enumerate(sorted(self.devices)):
-                status = "Authorized" if is_device_whitelisted(vendor_id, product_id) else "Unauthorized"
-                icon = "✅ " if status == "Authorized" else "❌ "
-                entry = f"{icon}{vendor_id}:{product_id} - {status}\n"
-                self.device_textbox.insert(END, entry)
-                self.device_textbox.tag_add(status, f"{i+1}.0", f"{i+1}.end")
-                self.device_textbox.tag_configure("Authorized", foreground="#2ECC71")
-                self.device_textbox.tag_configure("Unauthorized", foreground="#E74C3C")
-                if status == "Unauthorized":
-                    unauthorized_detected = True
-                self.progress.set((i + 1) / max(len(self.devices), 1))
-
-            if not unauthorized_detected and self.unauthorized_device:
-                self.unauthorized_device = None
-                self.alert_frame.pack_forget()
-
+            # Aktualizacja pozostałych części GUI
             self.whitelist_textbox.delete("1.0", END)
             try:
                 conn = sqlite3.connect(DB_FILE)
@@ -355,26 +372,27 @@ class USBMonitorApp(ctk.CTk):
                     self.whitelist_textbox.insert(END, f"✔️ {vid}:{pid}\n")
                 conn.close()
             except sqlite3.Error as e:
-                logging.error(f"[WHITELIST] Fetch error: {e}")
+                log.error(f"Whitelist fetch error: {e}")
 
             self.log_text.delete("1.0", END)
             try:
                 if os.path.exists(LOG_FILE):
-                    with open(LOG_FILE, "r") as f:
+                    with open(LOG_FILE, "r", encoding='utf-8') as f:
                         self.log_text.insert(END, f.read())
                     self.log_text.see(END)
-                    logging.debug("[GUI] Logs loaded")
+                    log.debug("Log file loaded into GUI")
                 else:
-                    logging.warning(f"[GUI] Log file {LOG_FILE} not found")
+                    log.warning(f"Log file {LOG_FILE} not found")
                     self.log_text.insert(END, "Log file not found\n")
             except Exception as e:
-                logging.error(f"[GUI] Log load error: {e}")
+                log.error(f"Log load error: {e}")
                 self.log_text.insert(END, f"Error loading logs: {e}\n")
 
         except Exception as e:
-            logging.error(f"[GUI] Update error: {e}")
+            log.error(f"GUI update error: {e}", exc_info=True)
             self.status_label.configure(text=f"Error: {e}", text_color="#E74C3C")
 
+        # Ustawienie kolejnego odświeżenia
         self.after(5000, self.update_gui)
 
     def check_alert_queue(self):
@@ -390,11 +408,10 @@ class USBMonitorApp(ctk.CTk):
                 return
             vendor_id, product_id = self.selected_device.split(":")
             add_to_whitelist(vendor_id, product_id)
-            logging.info(f"[WHITELIST] Added: {vendor_id}:{product_id}")
             messagebox.showinfo("Success", f"Device {vendor_id}:{product_id} added.")
             self.update_gui()
         except Exception as e:
-            logging.error(f"[WHITELIST] Add error: {e}")
+            log.error(f"Add to whitelist error: {e}")
             messagebox.showerror("Error", str(e))
 
     def export_logs_csv(self):
@@ -402,17 +419,17 @@ class USBMonitorApp(ctk.CTk):
             if not os.path.exists(LOG_FILE):
                 messagebox.showwarning("Warning", "No logs to export.")
                 return
-            with open(LOG_FILE, "r") as f:
+            with open(LOG_FILE, "r", encoding='utf-8') as f:
                 logs = f.readlines()
-            with open(f"logs_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv", "w", newline="") as f:
+            with open(f"logs_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv", "w", newline="", encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(["Log Entry"])
                 for log in logs:
                     writer.writerow([log.strip()])
-            logging.info("[ACTION] Exported to CSV")
+            log.info("Exported logs to CSV")
             messagebox.showinfo("Success", "Logs exported to CSV.")
         except Exception as e:
-            logging.error(f"[ACTION] CSV export error: {e}")
+            log.error(f"CSV export error: {e}")
             messagebox.showerror("Error", str(e))
 
     def export_logs_json(self):
@@ -420,18 +437,17 @@ class USBMonitorApp(ctk.CTk):
             if not os.path.exists(LOG_FILE):
                 messagebox.showwarning("Warning", "No logs to export.")
                 return
-            with open(LOG_FILE, "r") as f:
+            with open(LOG_FILE, "r", encoding='utf-8') as f:
                 logs = f.readlines()
             log_data = [{"entry": log.strip()} for log in logs]
-            with open(f"logs_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json", "w") as f:
+            with open(f"logs_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json", "w", encoding='utf-8') as f:
                 json.dump(log_data, f, indent=4)
-            logging.info("[ACTION] Exported to JSON")
+            log.info("Exported logs to JSON")
             messagebox.showinfo("Success", "Logs exported to JSON.")
         except Exception as e:
-            logging.error(f"[ACTION] JSON export error: {e}")
+            log.error(f"JSON export error: {e}")
             messagebox.showerror("Error", str(e))
 
 if __name__ == "__main__":
     app = USBMonitorApp()
     app.mainloop()
-    logging.info("[INIT] Application closed")
