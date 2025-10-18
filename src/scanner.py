@@ -45,83 +45,119 @@ def format_time(seconds):
 
 def scan_device(mount_point, progress_queue=None):
     """
-    Skanuje rekursywnie z odczytem outputu w czasie rzeczywistym.
-    Postęp jest raportowany przez bezpieczną kolejkę (queue).
+    Skanuje rekursywnie, raportuje postęp przez kolejkę.
+    Zwraca słownik zawierający listę zainfekowanych plików,
+    ostrzeżenia, błędy ORAZ listę wszystkich przeskanowanych plików.
     """
+    scan_result = {"infected": [], "warnings": [], "error": None, "scanned_files": []} # Dodano scanned_files
+
     if not mount_point or not os.path.exists(mount_point):
-        progress_queue.put({"error": "Mount point not found"})
-        return []
+        scan_result["error"] = "Mount point not found or invalid."
+        if progress_queue: progress_queue.put(scan_result)
+        return scan_result
 
     clamscan_path = "/opt/homebrew/bin/clamscan"
     if not os.path.exists(clamscan_path):
         clamscan_path = "/usr/local/bin/clamscan"
         if not os.path.exists(clamscan_path):
-            progress_queue.put({"error": "ClamAV not found"})
-            return []
+            scan_result["error"] = "ClamAV executable not found."
+            if progress_queue: progress_queue.put(scan_result)
+            return scan_result
 
-    infected_files = []
-
-    # Etap 1: Zbierz listę plików do policzenia (bez blokowania GUI na długo)
+    # --- Etap 1: Liczenie i zbieranie listy plików ---
     if progress_queue:
         progress_queue.put({"status": "Przygotowywanie... Liczenie plików..."})
+    log.info(f"Rozpoczynanie zbierania listy plików dla {mount_point}...")
+    try:
+        # Od razu zbieramy pełne ścieżki
+        files_to_scan_paths = [os.path.join(root, name) for root, _, files in os.walk(mount_point) for name in files]
+        scan_result["scanned_files"] = files_to_scan_paths # Zapisujemy listę do wyniku
+        total_files = len(files_to_scan_paths)
+        log.info(f"Zebrano listę {total_files} plików do przeskanowania.")
+    except Exception as e:
+        log.error(f"Błąd podczas listowania plików w {mount_point}: {e}", exc_info=True)
+        scan_result["error"] = f"Błąd listowania plików: {e}"
+        if progress_queue: progress_queue.put(scan_result)
+        return scan_result
 
-    log.info("Rozpoczynanie zbierania listy plików...")
-    files_to_scan = [os.path.join(root, name) for root, _, files in os.walk(mount_point) for name in files]
-    total_files = len(files_to_scan)
-    log.info(f"Zebrano listę {total_files} plików do przeskanowania.")
 
     if total_files == 0:
         if progress_queue:
-            progress_queue.put({"progress": 1.0, "status": "Brak plików do skanowania.", "etr": ""})
-        return []
+             # Zwracamy pełny wynik, nawet jeśli pusty
+            progress_queue.put({"progress": 1.0, "status": "Brak plików do skanowania.", "etr": "", "done": True, "result": scan_result})
+        log.info("Brak plików do skanowania.")
+        return scan_result # Zwracamy pusty, ale poprawny słownik wyniku
 
-    # Etap 2: Skanowanie
+    # --- Etap 2: Skanowanie ---
     scanned_count = 0
     start_time = time.time()
+    final_return_code = -1
+    stderr_output = ""
+
     try:
         command = [clamscan_path, "-r", "-v", mount_point]
+        log.info(f"Uruchamianie polecenia: {' '.join(command)}")
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', errors='ignore', bufsize=1)
 
         infected_pattern = re.compile(r"^(.*): (.*) FOUND$")
+        scanning_pattern = re.compile(r"^Scanning (.*)$")
 
         for line in iter(process.stdout.readline, ''):
             line = line.strip()
-            if not line:
-                continue
+            if not line: continue
 
-            match = infected_pattern.match(line)
-            if match:
-                file_path, signature = match.groups()
+            infected_match = infected_pattern.match(line)
+            scanning_match = scanning_pattern.match(line)
+
+            if infected_match:
+                file_path, signature = infected_match.groups()
                 log.warning(f"Zainfekowany plik: {file_path} (Sygnatura: {signature})")
-                if file_path not in infected_files:
-                    infected_files.append(file_path)
-
-            if line.startswith("Scanning "):
+                if not any(d['path'] == file_path for d in scan_result["infected"]):
+                   scan_result["infected"].append({'path': file_path, 'signature': signature})
+            elif scanning_match:
                 scanned_count += 1
-                progress = scanned_count / total_files
+                current_scanned = min(scanned_count, total_files)
+                progress = current_scanned / total_files
                 elapsed_time = time.time() - start_time
-                avg_time = elapsed_time / scanned_count if scanned_count > 0 else 0
-                etr = (total_files - scanned_count) * avg_time
-                
-                scanned_file_name = os.path.basename(line.replace("Scanning ", "").replace("...", ""))
-                status_text = f"Skanowanie ({scanned_count}/{total_files}): {scanned_file_name}"
+                avg_time = elapsed_time / current_scanned if current_scanned > 0 else 0
+                etr = (total_files - current_scanned) * avg_time
+
+                scanned_file_path = scanning_match.group(1).replace("...", "")
+                scanned_file_name = os.path.basename(scanned_file_path)
+                status_text = f"Skanowanie ({current_scanned}/{total_files}): {scanned_file_name}"
                 etr_text = f"Pozostało ok. {format_time(etr)}"
-                
+
                 if progress_queue:
-                    # Wrzucamy dane do kolejki zamiast bezpośrednio wołać GUI
                     progress_queue.put({"progress": progress, "status": status_text, "etr": etr_text})
 
-        process.wait()
-        if process.returncode not in [0, 1]:
-            error_output = process.stderr.read()
-            log.error(f"Clamscan zakończył działanie z błędem (kod: {process.returncode}): {error_output}")
-            if progress_queue:
-                progress_queue.put({"error": "Błąd skanera ClamAV. Sprawdź logi."})
+
+        _, stderr_output = process.communicate()
+        final_return_code = process.returncode
+        log.info(f"Clamscan zakończył działanie z kodem: {final_return_code}")
+        if stderr_output:
+             stderr_output = stderr_output.strip()
+             log.warning(f"Clamscan stderr: {stderr_output}")
+             if final_return_code == 2:
+                 scan_result["warnings"].append(stderr_output)
+
+
+        if final_return_code == 0:
+            log.info("Skanowanie zakończone, nie znaleziono infekcji.")
+        elif final_return_code == 1:
+            log.warning(f"Skanowanie zakończone, znaleziono {len(scan_result['infected'])} zainfekowanych plików.")
+        elif final_return_code == 2:
+            log.warning(f"Skanowanie zakończone z ostrzeżeniami (kod: 2). Znaleziono {len(scan_result['infected'])} infekcji.")
+        else:
+            error_msg = f"Błąd skanera ClamAV (kod: {final_return_code})."
+            if stderr_output: error_msg += f" Szczegóły: {stderr_output}"
+            else: error_msg += " Brak dodatkowych informacji w stderr."
+            log.error(error_msg)
+            scan_result["error"] = error_msg
 
     except Exception as e:
         log.error(f"Krytyczny błąd podczas skanowania: {e}", exc_info=True)
-        if progress_queue:
-            progress_queue.put({"error": f"Krytyczny błąd: {e}"})
+        scan_result["error"] = f"Krytyczny błąd: {e}"
 
-    log.info(f"Skanowanie zakończone. Znaleziono {len(infected_files)} zainfekowanych plików.")
-    return infected_files
+    if progress_queue:
+        progress_queue.put({"done": True, "result": scan_result})
+    return scan_result
