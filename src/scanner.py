@@ -1,5 +1,3 @@
-# src/scanner.py
-
 import os
 import logging
 import platform
@@ -7,32 +5,76 @@ import subprocess
 import plistlib
 import time
 import re
+import shutil
 
 log = logging.getLogger('secure_usb.scanner')
 
 def get_mount_point(bsd_name_from_usb_monitor):
     """
     Pobiera punkt montowania dla danego urządzenia na macOS.
+    Obsługuje zarówno dyski z partycjami, jak i woluminy bezpośrednie (whole disk).
     """
     if platform.system() != "Darwin" or not bsd_name_from_usb_monitor:
         log.warning("Funkcja get_mount_point jest obecnie zaimplementowana tylko dla macOS.")
         return None
     try:
+        # Pobieramy strukturę wszystkich dysków
         result = subprocess.run(
             ["diskutil", "list", "-plist", "external"],
             capture_output=True, text=True, check=True
         )
         full_disk_info = plistlib.loads(result.stdout.encode('utf-8'))
+        
+        # Szukamy pasującego dysku lub partycji
         for disk_data in full_disk_info.get('AllDisksAndPartitions', []):
+            
+            # Przypadek 1: BSD Name pasuje do głównego dysku (np. disk5)
             if disk_data.get('DeviceIdentifier') == bsd_name_from_usb_monitor:
+                # Sprawdź, czy dysk ma punkt montowania bezpośrednio (np. pendrive bez tabeli partycji)
+                if disk_data.get('MountPoint') and os.path.exists(disk_data['MountPoint']):
+                    return disk_data['MountPoint']
+                
+                # Jeśli nie, szukaj w partycjach tego dysku (np. disk4 -> disk4s1)
                 for partition in disk_data.get('Partitions', []):
                     mount_point = partition.get('MountPoint')
                     if mount_point and os.path.exists(mount_point):
                         return mount_point
+
+            # Przypadek 2: BSD Name pasuje do konkretnej partycji wewnątrz dysku (np. disk4s1)
+            # (Gdyby monitor USB zwrócił ID partycji zamiast dysku)
+            for partition in disk_data.get('Partitions', []):
+                if partition.get('DeviceIdentifier') == bsd_name_from_usb_monitor:
+                    mount_point = partition.get('MountPoint')
+                    if mount_point and os.path.exists(mount_point):
+                        return mount_point
+                        
         return None
     except Exception as e:
         log.error(f"Błąd podczas szukania punktu montowania: {e}")
         return None
+
+def get_clamscan_path():
+    """
+    Automatycznie wykrywa ścieżkę do pliku wykonywalnego clamscan.
+    """
+    # Najpierw sprawdź w PATH (systemowe, homebrew itp.)
+    path = shutil.which("clamscan")
+    if path:
+        log.debug(f"Znaleziono clamscan w: {path}")
+        return path
+    
+    # Fallback: sprawdź typowe ścieżki, jeśli nie ma w PATH
+    common_paths = [
+        "/opt/homebrew/bin/clamscan",
+        "/usr/local/bin/clamscan",
+        "/usr/bin/clamscan"
+    ]
+    for p in common_paths:
+        if os.path.exists(p):
+            log.debug(f"Znaleziono clamscan w typowej ścieżce: {p}")
+            return p
+            
+    return None
 
 def format_time(seconds):
     """Formatuje sekundy do czytelnego formatu (minuty, sekundy)."""
@@ -45,59 +87,43 @@ def format_time(seconds):
 
 def scan_device(mount_point, progress_queue=None):
     """
-    Skanuje rekursywnie, raportuje postęp przez kolejkę.
-    Zwraca słownik zawierający listę zainfekowanych plików,
-    ostrzeżenia, błędy ORAZ listę wszystkich przeskanowanych plików.
+    Skanuje rekursywnie, raportuje postęp przez kolejkę w trybie strumieniowym.
     """
-    scan_result = {"infected": [], "warnings": [], "error": None, "scanned_files": []} # Dodano scanned_files
+    scan_result = {"infected": [], "warnings": [], "error": None, "scanned_files": []}
 
     if not mount_point or not os.path.exists(mount_point):
         scan_result["error"] = "Mount point not found or invalid."
         if progress_queue: progress_queue.put(scan_result)
         return scan_result
 
-    clamscan_path = "/opt/homebrew/bin/clamscan"
-    if not os.path.exists(clamscan_path):
-        clamscan_path = "/usr/local/bin/clamscan"
-        if not os.path.exists(clamscan_path):
-            scan_result["error"] = "ClamAV executable not found."
-            if progress_queue: progress_queue.put(scan_result)
-            return scan_result
-
-    # --- Etap 1: Liczenie i zbieranie listy plików ---
-    if progress_queue:
-        progress_queue.put({"status": "Przygotowywanie... Liczenie plików..."})
-    log.info(f"Rozpoczynanie zbierania listy plików dla {mount_point}...")
-    try:
-        # Od razu zbieramy pełne ścieżki
-        files_to_scan_paths = [os.path.join(root, name) for root, _, files in os.walk(mount_point) for name in files]
-        scan_result["scanned_files"] = files_to_scan_paths # Zapisujemy listę do wyniku
-        total_files = len(files_to_scan_paths)
-        log.info(f"Zebrano listę {total_files} plików do przeskanowania.")
-    except Exception as e:
-        log.error(f"Błąd podczas listowania plików w {mount_point}: {e}", exc_info=True)
-        scan_result["error"] = f"Błąd listowania plików: {e}"
+    clamscan_path = get_clamscan_path()
+    if not clamscan_path:
+        scan_result["error"] = "Nie znaleziono programu ClamAV (clamscan). Upewnij się, że jest zainstalowany."
         if progress_queue: progress_queue.put(scan_result)
         return scan_result
 
+    if progress_queue:
+        progress_queue.put({"status": "Starting scanning..."})
+    
+    log.info(f"Starting scanning for {mount_point} with {clamscan_path}...")
 
-    if total_files == 0:
-        if progress_queue:
-             # Zwracamy pełny wynik, nawet jeśli pusty
-            progress_queue.put({"progress": 1.0, "status": "Brak plików do skanowania.", "etr": "", "done": True, "result": scan_result})
-        log.info("Brak plików do skanowania.")
-        return scan_result # Zwracamy pusty, ale poprawny słownik wyniku
-
-    # --- Etap 2: Skanowanie ---
     scanned_count = 0
-    start_time = time.time()
     final_return_code = -1
     stderr_output = ""
 
     try:
         command = [clamscan_path, "-r", "-v", mount_point]
         log.info(f"Uruchamianie polecenia: {' '.join(command)}")
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', errors='ignore', bufsize=1)
+        
+        process = subprocess.Popen(
+            command, 
+            stdout=subprocess.PIPE, 
+            stderr=subprocess.PIPE, 
+            text=True, 
+            encoding='utf-8', 
+            errors='ignore', 
+            bufsize=1
+        )
 
         infected_pattern = re.compile(r"^(.*): (.*) FOUND$")
         scanning_pattern = re.compile(r"^Scanning (.*)$")
@@ -114,32 +140,27 @@ def scan_device(mount_point, progress_queue=None):
                 log.warning(f"Zainfekowany plik: {file_path} (Sygnatura: {signature})")
                 if not any(d['path'] == file_path for d in scan_result["infected"]):
                    scan_result["infected"].append({'path': file_path, 'signature': signature})
+            
             elif scanning_match:
                 scanned_count += 1
-                current_scanned = min(scanned_count, total_files)
-                progress = current_scanned / total_files
-                elapsed_time = time.time() - start_time
-                avg_time = elapsed_time / current_scanned if current_scanned > 0 else 0
-                etr = (total_files - current_scanned) * avg_time
-
                 scanned_file_path = scanning_match.group(1).replace("...", "")
+                scan_result["scanned_files"].append(scanned_file_path)
+                
                 scanned_file_name = os.path.basename(scanned_file_path)
-                status_text = f"Skanowanie ({current_scanned}/{total_files}): {scanned_file_name}"
-                etr_text = f"Pozostało ok. {format_time(etr)}"
-
+                status_text = f"Skanowanie pliku #{scanned_count}: {scanned_file_name}"
+                
                 if progress_queue:
-                    progress_queue.put({"progress": progress, "status": status_text, "etr": etr_text})
-
+                    progress_queue.put({"status": status_text})
 
         _, stderr_output = process.communicate()
         final_return_code = process.returncode
         log.info(f"Clamscan zakończył działanie z kodem: {final_return_code}")
+        
         if stderr_output:
              stderr_output = stderr_output.strip()
              log.warning(f"Clamscan stderr: {stderr_output}")
              if final_return_code == 2:
                  scan_result["warnings"].append(stderr_output)
-
 
         if final_return_code == 0:
             log.info("Skanowanie zakończone, nie znaleziono infekcji.")

@@ -2,3 +2,4 @@ psutil
 tk
 pyusb
 customtkinter
+Pillow
