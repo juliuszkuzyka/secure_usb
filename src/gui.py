@@ -192,15 +192,19 @@ class USBMonitorApp(ctk.CTk):
     # --- LOGIKA APLIKACJI ---
 
     def update_gui_loop(self):
-        try:
-            if not self.is_scanning:
-                self.redraw_whitelist_list()
-                self.update_log_display()
+            try:
+                # To wykonuj ZAWSZE (niezależnie od skanowania)
                 self.update_system_stats()
-        except Exception:
-            pass
-        finally:
-            self.after(2000, self.update_gui_loop)
+
+                # To wykonuj tylko gdy NIE skanujesz (żeby nie kolidowało z GUI skanera)
+                if not self.is_scanning:
+                    self.redraw_whitelist_list()
+                    self.update_log_display()
+                    
+            except Exception:
+                pass
+            finally:
+                self.after(2000, self.update_gui_loop)
 
     def update_system_stats(self):
         if not psutil:
@@ -287,7 +291,7 @@ class USBMonitorApp(ctk.CTk):
             alert_text = f"CRITICAL: SUSPICIOUS HUB/KEYBOARD COMBO! ({vendor_id}:{product_id})"
             alert_color = "#FF0000" # Czerwony alarm - BadUSB?
         elif "HID" in classes_list:
-            alert_text = f"WARNING: UNAUTHORIZED KEYBOARD DETECTED! ({vendor_id}:{product_id})"
+            alert_text = f"WARNING: UNAUTHORIZED KEYBOARD/MOUSE DETECTED! ({vendor_id}:{product_id})"
             alert_color = "#FF4444"
         elif "STORAGE" in classes_list: # --- NOWE: Ostrzeżenie dla Storage ---
             alert_text = f"WARNING: UNAUTHORIZED STORAGE DETECTED! ({vendor_id}:{product_id})"
